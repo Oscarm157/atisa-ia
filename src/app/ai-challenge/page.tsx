@@ -9,6 +9,7 @@ import { Inversion } from "@/components/inversion";
 import { Premios } from "@/components/premios";
 import { TimelineVisual } from "@/components/timeline-visual";
 import { Cta } from "@/components/cta";
+import { Contraportada } from "@/components/contraportada";
 
 export default function AIChallenge() {
   return (
@@ -23,6 +24,7 @@ export default function AIChallenge() {
       <Premios />
       <Inversion />
       <Cta />
+      <Contraportada />
     </SlidesDeck>
   );
 }

@@ -5,6 +5,7 @@ import { GovFases } from "@/components/governance/gov-fases";
 import { GovRutaCritica } from "@/components/governance/gov-ruta-critica";
 import { GovKpis } from "@/components/governance/gov-kpis";
 import { GovCta } from "@/components/governance/gov-cta";
+import { Contraportada } from "@/components/contraportada";
 
 export default function AIGovernance() {
   return (
@@ -15,6 +16,7 @@ export default function AIGovernance() {
       <GovRutaCritica />
       <GovKpis />
       <GovCta />
+      <Contraportada />
     </SlidesDeck>
   );
 }
