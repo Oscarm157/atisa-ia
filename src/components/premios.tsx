@@ -1,26 +1,45 @@
 import { Slide } from "./slide";
 
-const positions = [
+const mainPositions = [
   {
     place: "1er",
     label: "Lugar",
+    detail: "Gran premio",
     gradient: "from-yellow-500/20 to-yellow-600/5 border-yellow-500/30",
     text: "text-yellow-400",
     icon: "emoji_events",
+    mega: true,
   },
   {
     place: "2do",
     label: "Lugar",
+    detail: "Premio destacado",
     gradient: "from-gray-300/20 to-gray-400/5 border-gray-400/30",
     text: "text-gray-300",
     icon: "military_tech",
+    mega: false,
   },
   {
     place: "3er",
     label: "Lugar",
+    detail: "Premio reconocimiento",
     gradient: "from-amber-700/20 to-amber-800/5 border-amber-700/30",
     text: "text-amber-600",
     icon: "workspace_premium",
+    mega: false,
+  },
+];
+
+const secondaryPositions = [
+  {
+    place: "4to",
+    label: "Lugar",
+    icon: "star",
+  },
+  {
+    place: "5to",
+    label: "Lugar",
+    icon: "star_half",
   },
 ];
 
@@ -43,22 +62,49 @@ export function Premios() {
         </span>
       </div>
 
-      <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-tight mb-8 max-w-4xl">
+      <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-tight mb-3 max-w-4xl">
         Top 5 proyectos premiados.{" "}
         <span className="text-muted">Todos los participantes ganan.</span>
       </h2>
 
-      <div className="grid grid-cols-3 gap-4 mb-8">
-        {positions.map((pos) => (
+      <p className="text-muted text-base leading-relaxed mb-6 max-w-3xl">
+        Los premios son clave para el éxito del programa. Incentivos atractivos
+        generan mayor participación, ideas más creativas y un nivel de esfuerzo
+        que transforma un ejercicio interno en una competencia real. Sin premios
+        que valgan la pena, el engagement cae y los resultados se quedan en lo básico.
+      </p>
+
+      {/* Top 3 principales */}
+      <div className="grid grid-cols-3 gap-4 mb-3">
+        {mainPositions.map((pos) => (
           <div
             key={pos.place}
-            className={`rounded-2xl border bg-gradient-to-b p-6 text-center ${pos.gradient}`}
+            className={`rounded-2xl border bg-gradient-to-b p-5 text-center ${pos.gradient} ${pos.mega ? "glow-red-subtle ring-1 ring-yellow-500/20" : ""}`}
           >
-            <span className={`material-symbols-outlined ${pos.text} mb-2`} style={{ fontSize: 40 }}>
+            <span className={`material-symbols-outlined ${pos.text} mb-2`} style={{ fontSize: pos.mega ? 48 : 36 }}>
               {pos.icon}
             </span>
-            <p className={`font-display font-extrabold text-2xl ${pos.text}`}>{pos.place}</p>
-            <p className="text-xs text-muted">{pos.label}</p>
+            <p className={`font-display font-extrabold ${pos.mega ? "text-3xl" : "text-2xl"} ${pos.text}`}>{pos.place}</p>
+            <p className="text-xs text-muted mb-1">{pos.label}</p>
+            <p className="text-[10px] text-muted/60">{pos.detail}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* 4to y 5to secundarios */}
+      <div className="grid grid-cols-2 gap-3 mb-6">
+        {secondaryPositions.map((pos) => (
+          <div
+            key={pos.place}
+            className="rounded-xl border border-card-border bg-card/50 px-4 py-3 flex items-center gap-3"
+          >
+            <span className="material-symbols-outlined text-muted" style={{ fontSize: 20 }}>
+              {pos.icon}
+            </span>
+            <div>
+              <p className="font-display font-bold text-sm text-foreground">{pos.place} {pos.label}</p>
+              <p className="text-[10px] text-muted">Mención honorífica + premio</p>
+            </div>
           </div>
         ))}
       </div>
