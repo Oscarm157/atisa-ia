@@ -136,6 +136,17 @@ export function SlidesDeck({ children, storageKey = "atisa-slide" }: SlidesDeckP
         </div>
       ))}
 
+      {/* Top-left home button */}
+      <a
+        href="/"
+        className="absolute top-0 left-0 z-50 flex items-center gap-1.5 px-3 sm:px-6 py-3 sm:py-4 text-muted hover:text-foreground transition-all"
+      >
+        <span className="material-symbols-outlined" style={{ fontSize: 16 }}>
+          arrow_back
+        </span>
+        <span className="text-xs font-medium hidden sm:inline">Inicio</span>
+      </a>
+
       {/* Top-right controls */}
       <div className="absolute top-0 right-0 z-50 flex items-center gap-2 sm:gap-3 px-3 sm:px-6 py-3 sm:py-4">
         {/* Counter */}
