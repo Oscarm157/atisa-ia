@@ -3,9 +3,9 @@ import { Slide } from "./slide";
 
 const nextSteps = [
   { step: "1", text: "Aprobación de la junta directiva" },
-  { step: "2", text: "Asignación de licencias de IA por área" },
-  { step: "3", text: "Sesión de kick-off con todos los departamentos" },
-  { step: "4", text: "Inicio del Atisa AI Challenge" },
+  { step: "2", text: "Definición de premios para el Top 5" },
+  { step: "3", text: "Asignación de licencias de IA (~$25 USD/persona)" },
+  { step: "4", text: "Kick-off con todos los departamentos e inicio del AI Challenge" },
 ];
 
 export function Cta() {
@@ -28,20 +28,20 @@ export function Cta() {
         {/* Summary cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 mb-8">
           <div className="rounded-xl border border-card-border bg-card p-4 text-center">
-            <p className="font-display font-extrabold text-2xl text-gradient">$60K</p>
-            <p className="text-xs text-muted">Inversión anual</p>
+            <p className="font-display font-extrabold text-2xl text-gradient">~$60K</p>
+            <p className="text-xs text-muted">Inversión anual + premios</p>
           </div>
           <div className="rounded-xl border border-card-border bg-card p-4 text-center">
-            <p className="font-display font-extrabold text-2xl text-gradient">250</p>
-            <p className="text-xs text-muted">Colaboradores</p>
+            <p className="font-display font-extrabold text-2xl text-gradient">~250</p>
+            <p className="text-xs text-muted">Colaboradores participantes</p>
           </div>
           <div className="rounded-xl border border-card-border bg-card p-4 text-center">
             <p className="font-display font-extrabold text-2xl text-gradient">12</p>
-            <p className="text-xs text-muted">Semanas</p>
+            <p className="text-xs text-muted">Semanas, 4 fases</p>
           </div>
           <div className="rounded-xl border border-card-border bg-card p-4 text-center">
-            <p className="font-display font-extrabold text-2xl text-gradient">Top 5</p>
-            <p className="text-xs text-muted">Proyectos premiados</p>
+            <p className="font-display font-extrabold text-2xl text-gradient">+200</p>
+            <p className="text-xs text-muted">Proyectos esperados, Top 5 premiados</p>
           </div>
         </div>
 
