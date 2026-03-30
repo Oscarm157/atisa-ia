@@ -108,7 +108,7 @@ export function Herramientas() {
             <p className="text-xs text-muted mb-1">{tool.company}</p>
             {tool.highlight ? (
               <span className="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full font-medium w-fit mb-3">
-                Lider empresarial
+                Líder empresarial
               </span>
             ) : (
               <p className="text-xs text-muted/70 italic mb-3">{tool.tagline}</p>

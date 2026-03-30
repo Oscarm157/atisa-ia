@@ -17,7 +17,7 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "Atisa AI Challenge",
   description:
-    "Iniciativa de innovacion con Inteligencia Artificial. Atisa Group",
+    "Iniciativa de innovación con Inteligencia Artificial. Atisa Group",
   icons: {
     icon: "/favicon.ico",
   },
