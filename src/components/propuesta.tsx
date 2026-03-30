@@ -68,8 +68,8 @@ export function Propuesta() {
           height={28}
           className="mb-4 brightness-0 invert"
         />
-        <div className="max-w-md">
-          <DotMatrixTitle sizeMultiplier={0.55} cycles={2} align="left" />
+        <div className="max-w-xl">
+          <DotMatrixTitle sizeMultiplier={0.6} cycles={2} align="left" />
         </div>
       </div>
 
