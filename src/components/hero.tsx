@@ -71,37 +71,50 @@ function DotMatrixTitle() {
       if (!startTime) startTime = timestamp;
       const elapsed = timestamp - startTime;
 
+      // Cycle timing: dots reveal (0-1800) → solid text fade in (1800-2600) → hold (2600-3600) → fade out (3600-4200) → pause (4200-4600) → restart
+      const cycleDuration = 4600;
+      const cycleElapsed = elapsed % cycleDuration;
+      const currentCycle = Math.floor(elapsed / cycleDuration);
+      const maxCycles = 4;
+
       ctx.clearRect(0, 0, w, h);
 
-      for (const dot of dots) {
-        const progress = Math.max(0, Math.min(1, (elapsed - dot.delay) / 600));
-        if (progress <= 0) continue;
+      // Draw dots only during reveal phase (0-2600ms of cycle)
+      if (cycleElapsed <= 2600 && currentCycle < maxCycles) {
+        for (const dot of dots) {
+          const progress = Math.max(0, Math.min(1, (cycleElapsed - dot.delay) / 600));
+          if (progress <= 0) continue;
 
-        const eased = 1 - Math.pow(1 - progress, 3);
-        const alpha = eased * dot.targetAlpha;
+          const eased = 1 - Math.pow(1 - progress, 3);
+          // Fade dots out as solid text fades in
+          const dotFadeOut = cycleElapsed > 1800 ? 1 - (cycleElapsed - 1800) / 800 : 1;
+          const alpha = eased * dot.targetAlpha * Math.max(0, dotFadeOut);
 
-        // Slight upward drift during reveal
-        const yOffset = (1 - eased) * 12;
+          // Slight upward drift during reveal
+          const yOffset = (1 - eased) * 12;
 
-        // Red core
-        ctx.beginPath();
-        ctx.arc(dot.x, dot.y - yOffset, dotRadius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(204, 0, 0, ${alpha})`;
-        ctx.fill();
-
-        // White hot center for brightness
-        if (alpha > 0.5) {
+          // Red core
           ctx.beginPath();
-          ctx.arc(dot.x, dot.y - yOffset, dotRadius * 0.4, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(255, 100, 80, ${(alpha - 0.5) * 1.5})`;
+          ctx.arc(dot.x, dot.y - yOffset, dotRadius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(204, 0, 0, ${alpha})`;
           ctx.fill();
+
+          // White hot center for brightness
+          if (alpha > 0.5) {
+            ctx.beginPath();
+            ctx.arc(dot.x, dot.y - yOffset, dotRadius * 0.4, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 100, 80, ${(alpha - 0.5) * 1.5})`;
+            ctx.fill();
+          }
         }
       }
 
-      // After all dots revealed, draw solid text with gradient on top (fade in)
-      const allRevealed = elapsed > 1800;
-      if (allRevealed) {
-        const textFade = Math.min(1, (elapsed - 1800) / 800);
+      // Phase 1: dots reveal (0 - 1800ms)
+      // (already drawn above)
+
+      // Phase 2: solid text fade in over dots (1800 - 2600ms)
+      if (cycleElapsed > 1800 && cycleElapsed <= 3600) {
+        const textFade = Math.min(1, (cycleElapsed - 1800) / 800);
         const gradient = ctx.createLinearGradient(0, 0, w, h);
         gradient.addColorStop(0, "#FF1A1A");
         gradient.addColorStop(0.5, "#CC0000");
@@ -114,22 +127,41 @@ function DotMatrixTitle() {
         ctx.fillStyle = gradient;
         ctx.fillText(text, w / 2, h / 2);
         ctx.globalAlpha = 1;
-
-        // Fade out dots
-        const dotFade = 1 - textFade;
-        if (dotFade > 0) {
-          for (const dot of dots) {
-            ctx.beginPath();
-            ctx.arc(dot.x, dot.y, dotRadius, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(204, 0, 0, ${dot.targetAlpha * dotFade * 0.3})`;
-            ctx.fill();
-          }
-        }
       }
 
-      if (elapsed < 3200) {
-        animFrame = requestAnimationFrame(animate);
+      // Phase 3: fade everything out (3600 - 4200ms)
+      if (cycleElapsed > 3600 && cycleElapsed <= 4200) {
+        const fadeOut = 1 - (cycleElapsed - 3600) / 600;
+        const gradient = ctx.createLinearGradient(0, 0, w, h);
+        gradient.addColorStop(0, "#FF1A1A");
+        gradient.addColorStop(0.5, "#CC0000");
+        gradient.addColorStop(1, "#990000");
+
+        ctx.globalAlpha = fadeOut;
+        ctx.font = `800 ${fontSize}px "Plus Jakarta Sans", sans-serif`;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillStyle = gradient;
+        ctx.fillText(text, w / 2, h / 2);
+        ctx.globalAlpha = 1;
       }
+
+      // After last cycle, keep solid text visible
+      if (currentCycle >= maxCycles) {
+        ctx.clearRect(0, 0, w, h);
+        const gradient = ctx.createLinearGradient(0, 0, w, h);
+        gradient.addColorStop(0, "#FF1A1A");
+        gradient.addColorStop(0.5, "#CC0000");
+        gradient.addColorStop(1, "#990000");
+        ctx.font = `800 ${fontSize}px "Plus Jakarta Sans", sans-serif`;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillStyle = gradient;
+        ctx.fillText(text, w / 2, h / 2);
+        return; // stop animating
+      }
+
+      animFrame = requestAnimationFrame(animate);
     }
 
     // Small delay then start
@@ -182,7 +214,7 @@ export function Hero() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-card-border bg-card/50 backdrop-blur-sm">
             <span className="w-2 h-2 rounded-full bg-primary pulse-dot" />
             <span className="text-xs font-medium text-muted uppercase tracking-wider">
-              Propuesta Junta Directiva, 2026
+              Campaña Adopción de AI en Atisa, 2026
             </span>
           </div>
         </div>
@@ -193,8 +225,8 @@ export function Hero() {
         </div>
 
         <p className="max-w-2xl mx-auto text-lg sm:text-xl text-muted leading-relaxed hero-fade-in-delayed">
-          Programa de integración de Inteligencia Artificial en todas las áreas
-          de Atisa a través de experimentación con propósito.
+          Competencia gamificada donde cada colaborador de Atisa usa IA para
+          resolver retos reales de su área. Experimenta, compite y gana.
         </p>
       </div>
     </Slide>
