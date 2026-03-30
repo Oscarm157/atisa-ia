@@ -20,7 +20,7 @@ export function Cta() {
             height={32}
             className="mx-auto mb-6 brightness-0 invert"
           />
-          <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-tight mb-4">
+          <h2 className="font-display font-bold text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-4">
             Resumen ejecutivo
           </h2>
         </div>

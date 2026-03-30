@@ -76,7 +76,7 @@ export function TimelineVisual() {
         </span>
       </div>
 
-      <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-tight mb-6 max-w-4xl">
+      <h2 className="font-display font-bold text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-6 max-w-4xl">
         4 fases. 12 semanas de ejecución.
       </h2>
 
@@ -87,9 +87,9 @@ export function TimelineVisual() {
             phase.weekBlocks.map((w) => (
               <div key={w} className="flex-1 flex flex-col items-center gap-1.5">
                 <div
-                  className={`w-full h-7 rounded-md ${phase.color} opacity-80 hover:opacity-100 transition-opacity`}
+                  className={`w-full h-5 sm:h-7 rounded-md ${phase.color} opacity-80 hover:opacity-100 transition-opacity`}
                 />
-                <span className="text-[11px] text-muted font-mono">{w}</span>
+                <span className="text-[11px] text-muted font-mono hidden sm:block">{w}</span>
               </div>
             ))
           )}
