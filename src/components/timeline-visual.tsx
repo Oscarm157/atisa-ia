@@ -77,8 +77,7 @@ export function TimelineVisual() {
       </div>
 
       <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-tight mb-6 max-w-4xl">
-        4 fases. 12 semanas de ejecución.{" "}
-        <span className="text-muted">Resultados reales.</span>
+        4 fases. 12 semanas de ejecución.
       </h2>
 
       {/* Timeline bar - proportional widths */}
