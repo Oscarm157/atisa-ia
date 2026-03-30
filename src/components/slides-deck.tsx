@@ -7,7 +7,13 @@ interface SlidesDeckProps {
 }
 
 export function SlidesDeck({ children }: SlidesDeckProps) {
-  const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState(() => {
+    if (typeof window !== "undefined") {
+      const saved = sessionStorage.getItem("atisa-slide");
+      return saved ? parseInt(saved, 10) : 0;
+    }
+    return 0;
+  });
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [direction, setDirection] = useState<"next" | "prev">("next");
   const [isAnimating, setIsAnimating] = useState(false);
@@ -29,6 +35,11 @@ export function SlidesDeck({ children }: SlidesDeckProps) {
 
   const next = useCallback(() => goTo(current + 1, "next"), [current, goTo]);
   const prev = useCallback(() => goTo(current - 1, "prev"), [current, goTo]);
+
+  // Persist current slide
+  useEffect(() => {
+    sessionStorage.setItem("atisa-slide", String(current));
+  }, [current]);
 
   // Keyboard navigation
   useEffect(() => {
