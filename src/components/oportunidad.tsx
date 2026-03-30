@@ -13,19 +13,27 @@ export function Oportunidad() {
       </div>
 
       <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-tight mb-8 max-w-4xl">
-        No existen expertos en IA.{" "}
-        <span className="text-muted">Todos partimos del mismo lugar.</span>
+        Todos estamos aprendiendo.{" "}
+        <span className="text-muted">La ventaja es empezar ahora.</span>
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="space-y-4 text-muted text-base leading-relaxed">
           <p>
             Fuera de los laboratorios de investigación (OpenAI, Anthropic, Google
-            DeepMind), nadie tiene ventaja real. Las herramientas tienen menos de 3
-            años disponibles al público.
+            DeepMind), todos estamos descubriendo cómo aprovechar la IA en nuestro
+            trabajo. Las herramientas tienen menos de 3 años disponibles al público.
+          </p>
+          <p>
+            Malcolm Gladwell popularizó la regla de las 10,000 horas: nadie domina
+            una habilidad sin práctica deliberada.{" "}
+            <span className="text-foreground font-medium">
+              Con IA, cada token gastado es una hora de experimentación.
+            </span>{" "}
+            No se puede optimizar un proceso sin usarlo, sin probar, sin equivocarse.
           </p>
           <p className="text-foreground font-medium">
-            Las empresas que están integrando IA hoy no saben más. Decidieron empezar antes.
+            Las empresas que están integrando IA hoy no saben más. Decidieron experimentar antes.
           </p>
         </div>
 
