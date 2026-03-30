@@ -67,7 +67,7 @@ export function Mecanica() {
               <span className="material-symbols-outlined text-muted" style={{ fontSize: 18 }}>
                 {phase.icon}
               </span>
-              <span className="text-[10px] font-semibold text-primary uppercase tracking-wider ml-auto">
+              <span className="text-xs font-semibold text-primary uppercase tracking-wider ml-auto">
                 {phase.duration}
               </span>
             </div>

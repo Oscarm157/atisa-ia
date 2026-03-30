@@ -51,7 +51,7 @@ export function DatosChart() {
           <h3 className="text-xs font-semibold uppercase tracking-wider text-muted mb-1">
             Adopción de IA en empresas
           </h3>
-          <p className="text-[10px] text-muted/60 mb-4">
+          <p className="text-xs text-muted/60 mb-4">
             % de empresas con IA en al menos una función (McKinsey State of AI, 2025)
           </p>
           <ResponsiveContainer width="100%" height={200}>
@@ -80,7 +80,7 @@ export function DatosChart() {
               </Bar>
             </BarChart>
           </ResponsiveContainer>
-          <p className="text-[10px] text-muted/40 mt-2">* Proyección estimada</p>
+          <p className="text-xs text-muted/40 mt-2">* Proyección estimada</p>
         </div>
 
         {/* KPI Cards */}
@@ -94,7 +94,7 @@ export function DatosChart() {
                 {stat.value}
               </p>
               <p className="text-sm text-foreground leading-snug mb-1">{stat.label}</p>
-              <p className="text-[10px] text-muted/50 italic">{stat.source}</p>
+              <p className="text-xs text-muted/50 italic">{stat.source}</p>
             </div>
           ))}
         </div>

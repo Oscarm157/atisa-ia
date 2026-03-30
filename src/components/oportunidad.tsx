@@ -45,11 +45,11 @@ export function Oportunidad() {
           </blockquote>
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center">
-              <span className="text-[10px] font-bold text-muted">JH</span>
+              <span className="text-xs font-bold text-muted">JH</span>
             </div>
             <div>
               <p className="text-xs font-semibold">Jensen Huang</p>
-              <p className="text-[10px] text-muted">CEO, NVIDIA. Marzo 2026</p>
+              <p className="text-xs text-muted">CEO, NVIDIA. Marzo 2026</p>
             </div>
           </div>
         </div>

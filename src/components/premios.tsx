@@ -86,7 +86,7 @@ export function Premios() {
             </span>
             <p className={`font-display font-extrabold ${pos.mega ? "text-3xl" : "text-2xl"} ${pos.text}`}>{pos.place}</p>
             <p className="text-xs text-muted mb-1">{pos.label}</p>
-            <p className="text-[10px] text-muted/60">{pos.detail}</p>
+            <p className="text-xs text-muted/60">{pos.detail}</p>
           </div>
         ))}
       </div>
@@ -103,7 +103,7 @@ export function Premios() {
             </span>
             <div>
               <p className="font-display font-bold text-sm text-foreground">{pos.place} {pos.label}</p>
-              <p className="text-[10px] text-muted">Mención honorífica + premio</p>
+              <p className="text-xs text-muted">Mención honorífica + premio</p>
             </div>
           </div>
         ))}

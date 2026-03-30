@@ -118,7 +118,7 @@ export function EvaluacionChart() {
                   style={{ width: `${c.weight}%` }}
                 />
               </div>
-              <p className="text-[11px] text-muted">{c.description}</p>
+              <p className="text-xs text-muted">{c.description}</p>
             </div>
           ))}
 
@@ -130,7 +130,7 @@ export function EvaluacionChart() {
               </span>
               <span className="font-semibold text-sm">Indicador de participación</span>
             </div>
-            <p className="text-[11px] text-muted leading-relaxed">
+            <p className="text-xs text-muted leading-relaxed">
               El consumo de tokens refleja el nivel de experimentación real.
               Cada token es un experimento, una pregunta, un intento de mejora.
             </p>

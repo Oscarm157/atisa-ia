@@ -45,9 +45,9 @@ export function Inversion() {
         <div className="grid grid-cols-2 gap-3 stagger-in">
           {kpis.map((kpi) => (
             <div key={kpi.label} className="rounded-xl border border-card-border bg-card p-4">
-              <p className="text-[10px] text-muted uppercase tracking-wider mb-1">{kpi.label}</p>
+              <p className="text-xs text-muted uppercase tracking-wider mb-1">{kpi.label}</p>
               <p className="font-display font-extrabold text-2xl text-gradient">{kpi.value}</p>
-              <p className="text-[10px] text-muted/60 mt-1">{kpi.sub}</p>
+              <p className="text-xs text-muted/60 mt-1">{kpi.sub}</p>
             </div>
           ))}
         </div>
@@ -57,7 +57,7 @@ export function Inversion() {
           <h3 className="text-xs font-semibold uppercase tracking-wider text-muted mb-1">
             Comparativa de inversión (USD/año)
           </h3>
-          <p className="text-[10px] text-muted/60 mb-4">
+          <p className="text-xs text-muted/60 mb-4">
             Inversión en IA vs costo de 1 empleado vs ahorro proyectado
           </p>
           <ResponsiveContainer width="100%" height={200}>

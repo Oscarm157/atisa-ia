@@ -29,19 +29,19 @@ export function Cta() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
           <div className="rounded-xl border border-card-border bg-card p-4 text-center">
             <p className="font-display font-extrabold text-2xl text-gradient">$60K</p>
-            <p className="text-[10px] text-muted">Inversión anual</p>
+            <p className="text-xs text-muted">Inversión anual</p>
           </div>
           <div className="rounded-xl border border-card-border bg-card p-4 text-center">
             <p className="font-display font-extrabold text-2xl text-gradient">250</p>
-            <p className="text-[10px] text-muted">Colaboradores</p>
+            <p className="text-xs text-muted">Colaboradores</p>
           </div>
           <div className="rounded-xl border border-card-border bg-card p-4 text-center">
             <p className="font-display font-extrabold text-2xl text-gradient">12</p>
-            <p className="text-[10px] text-muted">Semanas</p>
+            <p className="text-xs text-muted">Semanas</p>
           </div>
           <div className="rounded-xl border border-card-border bg-card p-4 text-center">
             <p className="font-display font-extrabold text-2xl text-gradient">Top 5</p>
-            <p className="text-[10px] text-muted">Proyectos premiados</p>
+            <p className="text-xs text-muted">Proyectos premiados</p>
           </div>
         </div>
 
@@ -54,7 +54,7 @@ export function Cta() {
             {nextSteps.map((ns) => (
               <div key={ns.step} className="flex items-center gap-3">
                 <div className="w-6 h-6 shrink-0 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className="text-[10px] font-bold text-primary">{ns.step}</span>
+                  <span className="text-xs font-bold text-primary">{ns.step}</span>
                 </div>
                 <p className="text-sm text-muted">{ns.text}</p>
               </div>

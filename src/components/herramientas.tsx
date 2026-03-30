@@ -113,11 +113,11 @@ export function Herramientas() {
             <p className="font-display font-bold text-base mb-0.5">{tool.name}</p>
             <p className="text-xs text-muted mb-1">{tool.company}</p>
             {tool.highlight ? (
-              <span className="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full font-medium w-fit mb-3">
+              <span className="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full font-medium w-fit mb-3">
                 Lider empresarial
               </span>
             ) : (
-              <p className="text-[10px] text-muted/70 italic mb-3">{tool.tagline}</p>
+              <p className="text-xs text-muted/70 italic mb-3">{tool.tagline}</p>
             )}
 
             {/* Description */}
@@ -127,12 +127,12 @@ export function Herramientas() {
 
             {/* Strengths */}
             <div className="mt-auto space-y-1.5 border-t border-card-border pt-3">
-              <p className="text-[10px] font-semibold uppercase tracking-wider text-muted/60">
+              <p className="text-xs font-semibold uppercase tracking-wider text-muted/60">
                 Fortalezas
               </p>
               {tool.strengths.map((s) => (
                 <div key={s} className="flex items-start gap-1.5">
-                  <span className="text-primary text-[9px] mt-[3px]">&#9679;</span>
+                  <span className="text-primary text-[11px] mt-[2px]">&#9679;</span>
                   <p className="text-xs text-muted/80 leading-snug">{s}</p>
                 </div>
               ))}

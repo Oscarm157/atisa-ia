@@ -89,12 +89,12 @@ export function TimelineVisual() {
                 <div
                   className={`w-full h-7 rounded-md ${phase.color} opacity-80 hover:opacity-100 transition-opacity`}
                 />
-                <span className="text-[9px] text-muted font-mono">{w}</span>
+                <span className="text-[11px] text-muted font-mono">{w}</span>
               </div>
             ))
           )}
         </div>
-        <p className="text-[10px] text-muted/50 mt-1.5 text-center">Semana</p>
+        <p className="text-xs text-muted/50 mt-1.5 text-center">Semana</p>
       </div>
 
       {/* Phase details - proportional grid */}
@@ -113,12 +113,12 @@ export function TimelineVisual() {
                 <p className={`font-display font-bold text-xs ${phase.textColor}`}>
                   {phase.label}
                 </p>
-                <p className="text-[10px] text-muted">{phase.weeks}</p>
+                <p className="text-xs text-muted">{phase.weeks}</p>
               </div>
             </div>
 
             {/* Description */}
-            <p className="text-[10px] text-muted leading-relaxed mb-3">
+            <p className="text-xs text-muted leading-relaxed mb-3">
               {phase.description}
             </p>
 
@@ -132,7 +132,7 @@ export function TimelineVisual() {
                   >
                     {m.icon}
                   </span>
-                  <p className="text-[11px] text-muted leading-snug">{m.text}</p>
+                  <p className="text-xs text-muted leading-snug">{m.text}</p>
                 </div>
               ))}
             </div>
