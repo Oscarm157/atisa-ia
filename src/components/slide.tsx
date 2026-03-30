@@ -11,7 +11,7 @@ export function Slide({ children, className = "", centered = true }: SlideProps)
         centered ? "flex items-start sm:items-center justify-center" : ""
       } ${className}`}
     >
-      <div className="w-full max-w-6xl mx-auto px-4 sm:px-8 md:px-12 py-4 sm:py-16">
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-8 md:px-12 pt-14 sm:pt-16 pb-4 sm:pb-16">
         {children}
       </div>
     </div>
