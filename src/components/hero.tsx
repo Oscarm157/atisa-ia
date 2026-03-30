@@ -6,7 +6,7 @@ import { DotMatrixTitle } from "./dot-matrix-title";
 
 export function Hero() {
   return (
-    <Slide className="grid-bg overflow-hidden !items-center">
+    <Slide className="grid-bg overflow-hidden">
       {/* Large ambient glow - center */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[160px] pointer-events-none" />
 
@@ -52,8 +52,8 @@ export function Hero() {
       <div className="absolute bottom-6 left-6 w-12 h-12 border-l-2 border-b-2 border-primary/20 rounded-bl-lg pointer-events-none" />
       <div className="absolute bottom-6 right-6 w-12 h-12 border-r-2 border-b-2 border-primary/20 rounded-br-lg pointer-events-none" />
 
-      <div className="relative z-10 text-center">
-        <div className="mb-8 hero-fade-in">
+      <div className="relative z-10 text-center mt-[8vh] sm:mt-0">
+        <div className="mb-4 sm:mb-8 hero-fade-in">
           <Image
             src="/66678d21-l-ati-g_104c01404b014000000028.png"
             alt="Atisa Group"
