@@ -32,13 +32,13 @@ export function DatosChart() {
         <span className="material-symbols-outlined text-primary" style={{ fontSize: 20 }}>
           bar_chart
         </span>
-        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+        <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
           Los Datos
         </span>
       </div>
 
-      <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-8 max-w-4xl">
-        Evidencia, no hype.
+      <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-tight mb-8 max-w-4xl">
+        Adopción global de IA.
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -48,7 +48,7 @@ export function DatosChart() {
             Adopción de IA en empresas
           </h3>
           <p className="text-[10px] text-muted/60 mb-4">
-            % de empresas con IA en al menos una función — McKinsey State of AI
+            % de empresas con IA en al menos una función (McKinsey State of AI)
           </p>
           <ResponsiveContainer width="100%" height={200}>
             <BarChart data={adoptionData} margin={{ top: 20, right: 0, left: 0, bottom: 0 }}>

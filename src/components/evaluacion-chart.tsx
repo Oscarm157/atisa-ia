@@ -28,12 +28,12 @@ export function EvaluacionChart() {
         <span className="material-symbols-outlined text-primary" style={{ fontSize: 20 }}>
           assessment
         </span>
-        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+        <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
           Evaluación
         </span>
       </div>
 
-      <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-8 max-w-4xl">
+      <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-tight mb-8 max-w-4xl">
         Criterios de evaluación.
       </h2>
 

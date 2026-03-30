@@ -20,7 +20,7 @@ export function Cta() {
             height={32}
             className="mx-auto mb-6 brightness-0 invert"
           />
-          <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl leading-tight mb-4">
+          <h2 className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl leading-tight mb-4">
             Resumen ejecutivo
           </h2>
         </div>
@@ -63,7 +63,7 @@ export function Cta() {
         </div>
 
         <p className="text-center text-xs text-muted/40 mt-8">
-          Atisa Group — Documento interno y confidencial
+          Atisa Group. Documento interno y confidencial
         </p>
       </div>
     </Slide>

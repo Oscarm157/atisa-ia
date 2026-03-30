@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Syne } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,8 +8,8 @@ const inter = Inter({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const syne = Syne({
-  variable: "--font-syne",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
 });
@@ -17,7 +17,7 @@ const syne = Syne({
 export const metadata: Metadata = {
   title: "Atisa AI Challenge",
   description:
-    "Iniciativa de innovacion con Inteligencia Artificial — Atisa Group",
+    "Iniciativa de innovacion con Inteligencia Artificial. Atisa Group",
   icons: {
     icon: "/favicon.ico",
   },
@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${inter.variable} ${syne.variable} antialiased`}>
+    <html lang="es" className={`${inter.variable} ${jakarta.variable} antialiased`}>
       <head>
         <link
           rel="stylesheet"

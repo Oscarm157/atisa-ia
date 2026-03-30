@@ -42,12 +42,12 @@ export function Mecanica() {
         <span className="material-symbols-outlined text-primary" style={{ fontSize: 20 }}>
           route
         </span>
-        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+        <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
           La Mecánica
         </span>
       </div>
 
-      <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-8 max-w-4xl">
+      <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-tight mb-8 max-w-4xl">
         4 fases. 12 semanas.{" "}
         <span className="text-muted">Resultados reales.</span>
       </h2>

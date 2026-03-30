@@ -27,7 +27,7 @@ const positions = [
 const benefits = [
   { icon: "school", text: "Conocimiento práctico en IA aplicado a tu área" },
   { icon: "visibility", text: "Proyecto presentado ante la dirección de Atisa" },
-  { icon: "trending_up", text: "Habilidades de IA — la competencia más demandada de 2026" },
+  { icon: "trending_up", text: "Habilidades de IA: la competencia más demandada de 2026" },
   { icon: "handshake", text: "Los mejores proyectos se implementan en producción" },
 ];
 
@@ -38,12 +38,12 @@ export function Premios() {
         <span className="material-symbols-outlined text-primary" style={{ fontSize: 20 }}>
           emoji_events
         </span>
-        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+        <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
           Premios
         </span>
       </div>
 
-      <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-8 max-w-4xl">
+      <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-tight mb-8 max-w-4xl">
         Top 5 proyectos premiados.{" "}
         <span className="text-muted">Todos los participantes ganan.</span>
       </h2>
