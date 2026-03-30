@@ -186,20 +186,51 @@ function DotMatrixTitle() {
 
 export function Hero() {
   return (
-    <Slide className="grid-bg">
-      {/* Ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+    <Slide className="grid-bg overflow-hidden">
+      {/* Large ambient glow - center */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[160px] pointer-events-none" />
 
-      {/* Dot grid background layer */}
+      {/* Secondary glow - top right */}
+      <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-primary/6 rounded-full blur-[120px] pointer-events-none" />
+
+      {/* Secondary glow - bottom left */}
+      <div className="absolute -bottom-40 -left-40 w-[400px] h-[400px] bg-blue-900/10 rounded-full blur-[100px] pointer-events-none" />
+
+      {/* Dot grid background layer - more visible */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage:
-            "radial-gradient(circle, rgba(204,0,0,0.08) 1px, transparent 1px)",
+            "radial-gradient(circle, rgba(204,0,0,0.15) 1px, transparent 1px)",
           backgroundSize: "24px 24px",
           animation: "hero-grid-pulse 6s ease-in-out infinite",
         }}
       />
+
+      {/* Horizontal scan lines */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(204,0,0,0.03) 3px, rgba(204,0,0,0.03) 4px)",
+        }}
+      />
+
+      {/* Animated vertical scan line */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(90deg, transparent 0%, transparent 45%, rgba(204,0,0,0.06) 49%, rgba(204,0,0,0.12) 50%, rgba(204,0,0,0.06) 51%, transparent 55%, transparent 100%)",
+          animation: "hero-scan 8s ease-in-out infinite",
+        }}
+      />
+
+      {/* Corner accents */}
+      <div className="absolute top-6 left-6 w-12 h-12 border-l-2 border-t-2 border-primary/20 rounded-tl-lg pointer-events-none" />
+      <div className="absolute top-6 right-6 w-12 h-12 border-r-2 border-t-2 border-primary/20 rounded-tr-lg pointer-events-none" />
+      <div className="absolute bottom-6 left-6 w-12 h-12 border-l-2 border-b-2 border-primary/20 rounded-bl-lg pointer-events-none" />
+      <div className="absolute bottom-6 right-6 w-12 h-12 border-r-2 border-b-2 border-primary/20 rounded-br-lg pointer-events-none" />
 
       <div className="relative z-10 text-center">
         <div className="mb-8 hero-fade-in">
