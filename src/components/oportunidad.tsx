@@ -12,12 +12,9 @@ export function Oportunidad() {
         </span>
       </div>
 
-      <h2 className="font-display font-bold text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-2 max-w-4xl">
-        Todos estamos aprendiendo.
+      <h2 className="font-display font-bold text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-8 max-w-4xl">
+        El momento de empezar es ahora.
       </h2>
-      <p className="font-display text-lg sm:text-xl md:text-2xl text-muted mb-8 max-w-4xl">
-        La ventaja es empezar ahora.
-      </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="space-y-4 text-muted text-base leading-relaxed">
