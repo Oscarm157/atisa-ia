@@ -101,10 +101,12 @@ export function Inversion() {
 
           <div className="rounded-xl border border-primary/20 bg-primary/5 px-5 py-4">
             <p className="text-sm text-muted leading-relaxed">
-              Más allá del retorno financiero, el programa genera una{" "}
-              <span className="text-foreground font-medium">cultura de experimentación con IA</span>{" "}
-              en toda la organización. Los 250 colaboradores salen capacitados, y los 5 proyectos
-              ganadores se convierten en mejoras operativas reales.
+              Los 5 finalistas se implementan directamente en producción. El resto de
+              los proyectos no se pierden:{" "}
+              <span className="text-foreground font-medium">
+                se evalúan individualmente para determinar cuáles pueden integrarse
+              </span>{" "}
+              a las operaciones de cada área.
             </p>
           </div>
         </div>
