@@ -4,12 +4,13 @@ import { useState, useEffect, useCallback, useRef } from "react";
 
 interface SlidesDeckProps {
   children: React.ReactNode[];
+  storageKey?: string;
 }
 
-export function SlidesDeck({ children }: SlidesDeckProps) {
+export function SlidesDeck({ children, storageKey = "atisa-slide" }: SlidesDeckProps) {
   const [current, setCurrent] = useState(() => {
     if (typeof window !== "undefined") {
-      const saved = sessionStorage.getItem("atisa-slide");
+      const saved = sessionStorage.getItem(storageKey);
       return saved ? parseInt(saved, 10) : 0;
     }
     return 0;
@@ -38,7 +39,7 @@ export function SlidesDeck({ children }: SlidesDeckProps) {
 
   // Persist current slide
   useEffect(() => {
-    sessionStorage.setItem("atisa-slide", String(current));
+    sessionStorage.setItem(storageKey, String(current));
   }, [current]);
 
   // Keyboard navigation
