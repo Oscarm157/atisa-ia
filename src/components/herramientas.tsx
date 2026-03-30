@@ -83,7 +83,7 @@ export function Herramientas() {
         </span>
       </div>
 
-      <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-6 max-w-4xl">
+      <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-tight mb-6 max-w-4xl">
         4 plataformas de IA.{" "}
         <span className="text-muted">Cada una con fortalezas distintas.</span>
       </h2>
