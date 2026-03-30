@@ -76,51 +76,54 @@ export function TimelineVisual() {
         12 semanas de ejecución.
       </h2>
 
-      {/* Kanban columns */}
-      <div className="grid grid-cols-4 gap-3 stagger-in">
+      {/* Timeline bar - proportional widths */}
+      <div className="rounded-2xl border border-card-border bg-card p-5 mb-5">
+        <div className="flex gap-1">
+          {phases.map((phase) =>
+            phase.weekBlocks.map((w) => (
+              <div key={w} className="flex-1 flex flex-col items-center gap-1.5">
+                <div
+                  className={`w-full h-7 rounded-md ${phase.color} opacity-80 hover:opacity-100 transition-opacity`}
+                />
+                <span className="text-[9px] text-muted font-mono">{w}</span>
+              </div>
+            ))
+          )}
+        </div>
+        <p className="text-[10px] text-muted/50 mt-1.5 text-center">Semana</p>
+      </div>
+
+      {/* Phase details - proportional grid */}
+      <div className="grid gap-3 stagger-in" style={{ gridTemplateColumns: "2fr 6fr 2fr 2fr" }}>
         {phases.map((phase) => (
           <div
             key={phase.id}
             className={`rounded-2xl border ${phase.borderColor} ${phase.bgColor} p-4 flex flex-col`}
           >
-            {/* Phase header with week blocks */}
-            <div className="mb-3">
-              <div className="flex items-center gap-2 mb-2">
-                <span className={`font-display font-bold text-2xl ${phase.textColor}`}>
-                  0{phase.id}
-                </span>
-                <div className="flex-1">
-                  <p className={`font-display font-bold text-sm ${phase.textColor}`}>
-                    {phase.label}
-                  </p>
-                  <p className="text-[10px] text-muted">{phase.weeks}</p>
-                </div>
-              </div>
-
-              {/* Week blocks mini bar */}
-              <div className="flex gap-0.5">
-                {phase.weekBlocks.map((w) => (
-                  <div key={w} className="flex-1 flex flex-col items-center gap-1">
-                    <div
-                      className={`w-full h-2 rounded-sm ${phase.color} opacity-70`}
-                    />
-                    <span className="text-[8px] text-muted/50 font-mono">{w}</span>
-                  </div>
-                ))}
+            {/* Phase header */}
+            <div className="flex items-center gap-2 mb-3">
+              <span className={`font-display font-bold text-xl ${phase.textColor}`}>
+                0{phase.id}
+              </span>
+              <div className="flex-1">
+                <p className={`font-display font-bold text-xs ${phase.textColor}`}>
+                  {phase.label}
+                </p>
+                <p className="text-[10px] text-muted">{phase.weeks}</p>
               </div>
             </div>
 
-            {/* Milestones for this phase */}
+            {/* Milestones */}
             <div className="space-y-2 border-t border-card-border pt-3">
               {phase.milestones.map((m) => (
                 <div key={m.text} className="flex items-start gap-2">
                   <span
                     className={`material-symbols-outlined ${phase.textColor} shrink-0`}
-                    style={{ fontSize: 16 }}
+                    style={{ fontSize: 15 }}
                   >
                     {m.icon}
                   </span>
-                  <p className="text-xs text-muted leading-snug">{m.text}</p>
+                  <p className="text-[11px] text-muted leading-snug">{m.text}</p>
                 </div>
               ))}
             </div>
