@@ -157,13 +157,22 @@ export function DotMatrixTitle({
       animFrame = requestAnimationFrame(animate);
     }
 
-    const timeout = setTimeout(() => {
-      setVisible(true);
-      animFrame = requestAnimationFrame(animate);
-    }, 300);
+    // Start animation only when canvas becomes visible
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          startTime = 0; // reset so animation starts fresh
+          setVisible(true);
+          animFrame = requestAnimationFrame(animate);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(canvas);
 
     return () => {
-      clearTimeout(timeout);
+      observer.disconnect();
       cancelAnimationFrame(animFrame);
     };
   }, [text, sizeMultiplier, cycles, align]);
