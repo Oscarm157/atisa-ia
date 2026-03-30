@@ -15,14 +15,14 @@ const adoptionData = [
   { year: "2022", value: 50, label: "50%" },
   { year: "2023", value: 55, label: "55%" },
   { year: "2024", value: 72, label: "72%" },
-  { year: "2025*", value: 82, label: "82%*" },
-  { year: "2026*", value: 90, label: "90%*" },
+  { year: "2025", value: 88, label: "88%" },
+  { year: "2026*", value: 93, label: "93%*" },
 ];
 
 const stats = [
-  { value: "$4.4T", label: "Valor anual que la IA agrega a la economía global. Equivalente al PIB de Japón, distribuido entre manufactura, servicios financieros y tecnología.", source: "McKinsey, 2024" },
-  { value: "55%", label: "Más rápido completan tareas los desarrolladores que usan AI assistants. El mayor impacto se ve en tareas repetitivas como documentación y debugging.", source: "GitHub Research, 2024" },
-  { value: "25%", label: "Más rápido y 40% mejor calidad en entregables cuando profesionales usan IA como apoyo en tareas de análisis y redacción.", source: "Harvard Business School, 2024" },
+  { value: "88%", label: "De las organizaciones ya despliegan IA en al menos una función de negocio. El salto más grande fue entre 2024 y 2025, impulsado por agentes de IA y herramientas integradas.", source: "McKinsey State of AI, Nov 2025" },
+  { value: "66%", label: "De las empresas reportan ganancias significativas en productividad con IA. Los equipos que rediseñaron sus flujos de trabajo (no solo agregaron IA) ven el mayor impacto.", source: "Deloitte State of AI in the Enterprise, 2026" },
+  { value: "$3.70", label: "Retorno por cada dólar invertido en IA a nivel empresarial. Las empresas que escalan IA más allá de pilotos ven un ROI de hasta 171% en agentes que llegan a producción.", source: "EY AI Pulse Survey / IBM, 2025" },
 ];
 
 export function DatosChart() {
@@ -52,7 +52,7 @@ export function DatosChart() {
             Adopción de IA en empresas
           </h3>
           <p className="text-[10px] text-muted/60 mb-4">
-            % de empresas con IA en al menos una función (McKinsey State of AI)
+            % de empresas con IA en al menos una función (McKinsey State of AI, 2025)
           </p>
           <ResponsiveContainer width="100%" height={200}>
             <BarChart data={adoptionData} margin={{ top: 20, right: 0, left: 0, bottom: 0 }}>
@@ -67,7 +67,7 @@ export function DatosChart() {
                 {adoptionData.map((entry, i) => (
                   <Cell
                     key={i}
-                    fill={i >= 3 ? "rgba(204,0,0,0.3)" : "#CC0000"}
+                    fill={i >= 4 ? "rgba(204,0,0,0.3)" : "#CC0000"}
                   />
                 ))}
                 <LabelList
