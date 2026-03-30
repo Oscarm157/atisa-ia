@@ -75,10 +75,12 @@ export function Herramientas() {
         </span>
       </div>
 
-      <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-tight mb-6 max-w-4xl">
-        4 plataformas de IA.{" "}
-        <span className="text-muted">Cada una con fortalezas distintas.</span>
+      <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-tight mb-2 max-w-4xl">
+        4 plataformas de IA.
       </h2>
+      <p className="font-display text-xl sm:text-2xl text-muted mb-6 max-w-4xl">
+        Cada una con fortalezas distintas.
+      </p>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 stagger-in">
         {tools.map((tool) => (

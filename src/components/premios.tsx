@@ -62,10 +62,12 @@ export function Premios() {
         </span>
       </div>
 
-      <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-tight mb-3 max-w-4xl">
-        Top 5 proyectos premiados.{" "}
-        <span className="text-muted">Todos los participantes ganan.</span>
+      <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-tight mb-2 max-w-4xl">
+        Top 5 proyectos premiados.
       </h2>
+      <p className="font-display text-xl sm:text-2xl text-muted mb-3 max-w-4xl">
+        Todos los participantes ganan.
+      </p>
 
       <p className="text-muted text-base leading-relaxed mb-6 max-w-3xl">
         Los premios son clave para el éxito del programa. Incentivos atractivos
