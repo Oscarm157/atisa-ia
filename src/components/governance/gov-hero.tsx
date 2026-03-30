@@ -57,7 +57,7 @@ export function GovHero() {
         </div>
 
         <div className="mb-6 max-w-5xl mx-auto">
-          <DotMatrixTitle text="AI Governance" />
+          <DotMatrixTitle text="AI Governance para ATISA" />
         </div>
 
         <p className="max-w-2xl mx-auto text-sm sm:text-lg md:text-xl text-muted leading-relaxed hero-fade-in-delayed">

@@ -1,17 +1,17 @@
 import { Slide } from "../slide";
 
 const fase1 = [
-  "Inventario de usuarios y licencias activas",
-  "Encuesta express de adopción por área",
-  "Dashboard v1 por área y herramienta",
-  "Identificación de champions internos",
-  "Detección de barreras de adopción",
+  "Inventario de usuarios/licencias",
+  "Encuesta express de adopción",
+  "Dashboard v1 por área/herramienta",
+  "Identificación de champions",
+  "Barreras de adopción",
 ];
 
 const fase2 = [
   "Integración de OpenAI, Anthropic, Gemini y Copilot",
   "Tokens por usuario y por área",
-  "Costo por proveedor en tiempo real",
+  "Costo por proveedor",
   "Clasificación de casos de uso",
   "Dashboard de gobierno y optimización",
 ];

@@ -2,11 +2,11 @@ import Image from "next/image";
 import { Slide } from "../slide";
 
 const benefits = [
-  { icon: "rocket_launch", text: "Acelerar adopción de IA" },
+  { icon: "rocket_launch", text: "Acelerar adopción" },
   { icon: "search", text: "Detectar áreas rezagadas" },
-  { icon: "school", text: "Enfocar capacitación donde más se necesita" },
-  { icon: "monitoring", text: "Medir consumo real por usuario y área" },
-  { icon: "savings", text: "Optimizar licencias y reducir costo" },
+  { icon: "school", text: "Enfocar capacitación" },
+  { icon: "monitoring", text: "Medir consumo real" },
+  { icon: "savings", text: "Optimizar licencias y costo" },
   { icon: "star", text: "Identificar casos de uso con mayor valor" },
 ];
 
@@ -23,7 +23,7 @@ export function GovCta() {
             className="mx-auto mb-6 brightness-0 invert"
           />
           <h2 className="font-display font-bold text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-4">
-            Decisión solicitada.
+            Beneficio esperado y decisión solicitada.
           </h2>
         </div>
 
@@ -59,7 +59,10 @@ export function GovCta() {
           </div>
         </div>
 
-        <p className="text-center text-xs text-muted/40 mt-8">
+        <p className="text-center text-sm text-muted mt-8">
+          Ruta propuesta: adopción rápida primero, gobierno y medición profunda después.
+        </p>
+        <p className="text-center text-xs text-muted/40 mt-4">
           Atisa Group. Documento interno y confidencial
         </p>
       </div>

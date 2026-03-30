@@ -4,17 +4,17 @@ const cards = [
   {
     icon: "trending_up",
     title: "Uso creciente",
-    description: "Los colaboradores ya usan herramientas de IA por su cuenta. No hay visibilidad de cuánto ni en qué.",
+    description: "La IA ya está entrando al trabajo diario.",
   },
   {
     icon: "visibility_off",
     title: "Baja visibilidad",
-    description: "No existe un inventario de licencias ni métricas de uso. No se puede medir lo que no se ve.",
+    description: "No sabemos con claridad quién la usa, cuánto cuesta y qué valor genera.",
   },
   {
     icon: "route",
     title: "Ruta propuesta",
-    description: "Fase 1: adopción y visibilidad rápida. Fase 2: gobierno, tokens y casos de uso.",
+    description: "Fase 1: adopción. Fase 2: gobierno, tokens y casos de uso.",
   },
 ];
 
@@ -30,12 +30,9 @@ export function GovProblema() {
         </span>
       </div>
 
-      <h2 className="font-display font-bold text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-2 max-w-4xl">
+      <h2 className="font-display font-bold text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-8 max-w-4xl">
         La IA ya está entrando al trabajo diario.
       </h2>
-      <p className="font-display text-lg sm:text-xl md:text-2xl text-muted mb-8 max-w-4xl">
-        No sabemos con claridad quién la usa, cuánto cuesta y qué valor genera.
-      </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8 stagger-in">
         {cards.map((card) => (
@@ -56,8 +53,8 @@ export function GovProblema() {
 
       <div className="rounded-2xl border border-primary/30 bg-primary/5 px-4 sm:px-8 py-4 sm:py-6 text-center glow-red-subtle">
         <p className="font-display font-bold text-lg sm:text-xl md:text-2xl text-foreground leading-snug">
-          Primero visibilidad rápida,{" "}
-          <span className="text-gradient">luego gobierno formal.</span>
+          Mensaje clave:{" "}
+          <span className="text-gradient">primero visibilidad rápida, luego gobierno formal.</span>
         </p>
       </div>
     </Slide>

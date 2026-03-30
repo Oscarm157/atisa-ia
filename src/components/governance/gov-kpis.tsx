@@ -86,6 +86,12 @@ export function GovKpis() {
           </div>
         ))}
       </div>
+
+      <div className="rounded-xl border border-primary/20 bg-primary/5 px-4 sm:px-6 py-4 mt-8 text-center">
+        <p className="text-sm text-muted leading-relaxed">
+          La campaña permite validar rápido, con bajo costo y con evidencia real, qué tan viable es escalar el AI Governance Dashboard.
+        </p>
+      </div>
     </Slide>
   );
 }
