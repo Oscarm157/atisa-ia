@@ -12,10 +12,9 @@ import {
 } from "recharts";
 
 const criteria = [
-  { name: "Impacto\nMedible", weight: 40, icon: "speed", description: "Ahorro demostrable en tiempo, calidad o costo. El proyecto debe presentar métricas concretas de antes y después." },
-  { name: "Aplicabilidad", weight: 25, icon: "build", description: "Qué tan fácil es integrarlo en el día a día del área sin depender de infraestructura adicional o conocimiento técnico avanzado." },
-  { name: "Innovación", weight: 20, icon: "auto_awesome", description: "Creatividad en el uso de IA. Se valora explorar capacidades nuevas, no solo automatizar lo obvio." },
-  { name: "Escalabilidad", weight: 15, icon: "share", description: "Potencial para replicarse en otros departamentos o procesos similares dentro de Atisa." },
+  { name: "Impacto en Tiempo,\nCalidad o Costo", weight: 40, icon: "speed", description: "Métricas concretas de antes y después. Sin números no hay proyecto." },
+  { name: "Innovación", weight: 30, icon: "auto_awesome", description: "¿Usaste IA de forma creativa o solo lo obvio? Se valora explorar capacidades nuevas." },
+  { name: "Ejecución y\nEscalabilidad", weight: 30, icon: "build", description: "¿Está bien hecho, documentado y listo para que alguien más lo use? ¿Es replicable en otras áreas?" },
 ];
 
 const radarData = criteria.map((c) => ({
