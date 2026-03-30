@@ -6,12 +6,14 @@ interface DotMatrixTitleProps {
   text?: string;
   sizeMultiplier?: number;
   cycles?: number;
+  align?: "center" | "left";
 }
 
 export function DotMatrixTitle({
   text = "AI Challenge",
   sizeMultiplier = 1,
   cycles = 4,
+  align = "center",
 }: DotMatrixTitleProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [visible, setVisible] = useState(false);
@@ -43,9 +45,9 @@ export function DotMatrixTitle({
     const offCtx = offscreen.getContext("2d")!;
     offCtx.fillStyle = "#fff";
     offCtx.font = `800 ${fontSize}px "Plus Jakarta Sans", sans-serif`;
-    offCtx.textAlign = "center";
+    offCtx.textAlign = align;
     offCtx.textBaseline = "middle";
-    offCtx.fillText(text, w / 2, h / 2);
+    offCtx.fillText(text, align === "center" ? w / 2 : 0, h / 2);
 
     const imageData = offCtx.getImageData(0, 0, w, h);
     const dots: { x: number; y: number; delay: number; targetAlpha: number }[] = [];
@@ -115,10 +117,10 @@ export function DotMatrixTitle({
 
         ctx.globalAlpha = textFade;
         ctx.font = `800 ${fontSize}px "Plus Jakarta Sans", sans-serif`;
-        ctx.textAlign = "center";
+        ctx.textAlign = align;
         ctx.textBaseline = "middle";
         ctx.fillStyle = gradient;
-        ctx.fillText(text, w / 2, h / 2);
+        ctx.fillText(text, align === "center" ? w / 2 : 0, h / 2);
         ctx.globalAlpha = 1;
       }
 
@@ -131,10 +133,10 @@ export function DotMatrixTitle({
 
         ctx.globalAlpha = fadeOut;
         ctx.font = `800 ${fontSize}px "Plus Jakarta Sans", sans-serif`;
-        ctx.textAlign = "center";
+        ctx.textAlign = align;
         ctx.textBaseline = "middle";
         ctx.fillStyle = gradient;
-        ctx.fillText(text, w / 2, h / 2);
+        ctx.fillText(text, align === "center" ? w / 2 : 0, h / 2);
         ctx.globalAlpha = 1;
       }
 
@@ -145,10 +147,10 @@ export function DotMatrixTitle({
         gradient.addColorStop(0.5, "#CC0000");
         gradient.addColorStop(1, "#990000");
         ctx.font = `800 ${fontSize}px "Plus Jakarta Sans", sans-serif`;
-        ctx.textAlign = "center";
+        ctx.textAlign = align;
         ctx.textBaseline = "middle";
         ctx.fillStyle = gradient;
-        ctx.fillText(text, w / 2, h / 2);
+        ctx.fillText(text, align === "center" ? w / 2 : 0, h / 2);
         return;
       }
 
@@ -164,7 +166,7 @@ export function DotMatrixTitle({
       clearTimeout(timeout);
       cancelAnimationFrame(animFrame);
     };
-  }, [text, sizeMultiplier, cycles]);
+  }, [text, sizeMultiplier, cycles, align]);
 
   return (
     <canvas

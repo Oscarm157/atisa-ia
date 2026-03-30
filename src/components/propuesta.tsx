@@ -69,7 +69,7 @@ export function Propuesta() {
           className="mb-4 brightness-0 invert"
         />
         <div className="max-w-md">
-          <DotMatrixTitle sizeMultiplier={0.55} cycles={2} />
+          <DotMatrixTitle sizeMultiplier={0.55} cycles={2} align="left" />
         </div>
       </div>
 
