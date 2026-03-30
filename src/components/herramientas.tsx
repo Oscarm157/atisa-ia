@@ -5,7 +5,7 @@ const tools = [
     number: 1,
     name: "Claude",
     company: "Anthropic",
-    tagline: "El cerebro: análisis y trabajo pesado",
+    tagline: "Análisis profundo y razonamiento",
     description:
       "El modelo más fuerte en razonamiento y análisis profundo. Ventana de contexto de 1M tokens: puede procesar libros enteros sin perder detalle.",
     strengths: [
@@ -20,7 +20,7 @@ const tools = [
     number: 2,
     name: "ChatGPT",
     company: "OpenAI",
-    tagline: "El explorador: búsqueda y versatilidad",
+    tagline: "Versatilidad y ecosistema global",
     description:
       "La plataforma más reconocida. Navega internet en tiempo real, genera imágenes y tiene un ecosistema de GPTs personalizados.",
     strengths: [
@@ -35,7 +35,7 @@ const tools = [
     number: 3,
     name: "Gemini",
     company: "Google",
-    tagline: "El multimedia: video, audio e imágenes",
+    tagline: "Multimodal nativo en Google",
     description:
       "Nativo en Google Workspace. Destaca en procesamiento de video y audio con Nano, su modelo on-device para tareas rápidas sin conexión.",
     strengths: [
@@ -50,7 +50,7 @@ const tools = [
     number: 4,
     name: "Copilot",
     company: "Microsoft",
-    tagline: "El operativo: donde ya trabajas",
+    tagline: "Integrado en Microsoft 365",
     description:
       "Embebido en Microsoft 365. Automatiza Excel, genera presentaciones en PowerPoint y resume reuniones en Teams.",
     strengths: [
