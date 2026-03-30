@@ -1,7 +1,16 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+
+  function goTo(path: string, storageKey: string) {
+    sessionStorage.removeItem(storageKey);
+    router.push(path);
+  }
+
   return (
     <div className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden">
       {/* Ambient glow */}
@@ -25,14 +34,14 @@ export default function Home() {
           alt="Atisa Group"
           width={200}
           height={48}
-          className="mx-auto mb-16 "
+          className="mx-auto mb-16"
           priority
         />
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-          <Link
-            href="/ai-governance"
+          <button
+            onClick={() => goTo("/ai-governance", "atisa-gov-slide")}
             className="group relative w-64 rounded-2xl border border-card-border bg-card/80 backdrop-blur-sm px-8 py-6 text-center transition-all hover:border-primary/40 hover:bg-card"
           >
             <span className="material-symbols-outlined text-primary mb-3 block" style={{ fontSize: 28 }}>
@@ -44,10 +53,10 @@ export default function Home() {
             <span className="text-xs text-muted">
               Visibilidad y gobierno formal
             </span>
-          </Link>
+          </button>
 
-          <Link
-            href="/ai-challenge"
+          <button
+            onClick={() => goTo("/ai-challenge", "atisa-challenge-slide")}
             className="group relative w-64 rounded-2xl border border-card-border bg-card/80 backdrop-blur-sm px-8 py-6 text-center transition-all hover:border-primary/40 hover:bg-card"
           >
             <span className="material-symbols-outlined text-primary mb-3 block" style={{ fontSize: 28 }}>
@@ -59,7 +68,7 @@ export default function Home() {
             <span className="text-xs text-muted">
               Competencia de adopción de IA
             </span>
-          </Link>
+          </button>
         </div>
       </div>
     </div>
