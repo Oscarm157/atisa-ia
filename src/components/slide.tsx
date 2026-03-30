@@ -1,0 +1,19 @@
+interface SlideProps {
+  children: React.ReactNode;
+  className?: string;
+  centered?: boolean;
+}
+
+export function Slide({ children, className = "", centered = true }: SlideProps) {
+  return (
+    <div
+      className={`w-full h-full overflow-y-auto ${
+        centered ? "flex items-center justify-center" : ""
+      } ${className}`}
+    >
+      <div className="w-full max-w-6xl mx-auto px-8 sm:px-12 py-16">
+        {children}
+      </div>
+    </div>
+  );
+}
