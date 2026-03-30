@@ -28,7 +28,7 @@ export function Cta() {
         {/* Summary cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 mb-8">
           <div className="rounded-xl border border-card-border bg-card p-4 text-center">
-            <p className="font-display font-extrabold text-2xl text-gradient">~$60K</p>
+            <p className="font-display font-extrabold text-2xl text-gradient">~$75K</p>
             <p className="text-xs text-muted">Inversión anual + premios</p>
           </div>
           <div className="rounded-xl border border-card-border bg-card p-4 text-center">
