@@ -76,7 +76,7 @@ export function TimelineVisual() {
         </span>
       </div>
 
-      <h2 className="font-display font-bold text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-6 max-w-4xl">
+      <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 max-w-4xl">
         4 fases. 12 semanas de ejecución.
       </h2>
 

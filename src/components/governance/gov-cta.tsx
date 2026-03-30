@@ -22,7 +22,7 @@ export function GovCta() {
             height={32}
             className="mx-auto mb-6 brightness-0 invert"
           />
-          <h2 className="font-display font-bold text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-4">
+          <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mb-4">
             Beneficio esperado y decisión solicitada.
           </h2>
         </div>

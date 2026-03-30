@@ -23,7 +23,7 @@ export function GovRutaCritica() {
         </span>
       </div>
 
-      <h2 className="font-display font-bold text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-2 max-w-4xl">
+      <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mb-2 max-w-4xl">
         Ruta crítica.
       </h2>
       <p className="font-display text-lg sm:text-xl md:text-2xl text-muted mb-8 max-w-4xl">
