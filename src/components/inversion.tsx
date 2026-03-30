@@ -25,6 +25,12 @@ const investmentItems = [
     value: "~$75K USD",
     detail: "Si se mantienen las licencias después del challenge",
   },
+  {
+    icon: "emoji_events",
+    label: "Premios para finalistas",
+    value: "Por definir",
+    detail: "Presupuesto adicional para premios del Top 5. Pendiente de aprobación.",
+  },
 ];
 
 const outcomes = [

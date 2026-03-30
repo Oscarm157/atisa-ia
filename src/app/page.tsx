@@ -18,10 +18,10 @@ export default function Home() {
       <DatosChart />
       <Herramientas />
       <Propuesta />
-      <EvaluacionChart />
-      <Inversion />
-      <Premios />
       <TimelineVisual />
+      <EvaluacionChart />
+      <Premios />
+      <Inversion />
       <Cta />
     </SlidesDeck>
   );
