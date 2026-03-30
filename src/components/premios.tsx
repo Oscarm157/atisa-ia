@@ -57,7 +57,7 @@ export function Premios() {
         <span className="material-symbols-outlined text-primary" style={{ fontSize: 20 }}>
           emoji_events
         </span>
-        <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
           Premios
         </span>
       </div>

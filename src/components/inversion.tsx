@@ -31,7 +31,7 @@ export function Inversion() {
         <span className="material-symbols-outlined text-primary" style={{ fontSize: 20 }}>
           account_balance
         </span>
-        <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
           Inversión & ROI
         </span>
       </div>

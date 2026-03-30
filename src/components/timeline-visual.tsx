@@ -71,7 +71,7 @@ export function TimelineVisual() {
         <span className="material-symbols-outlined text-primary" style={{ fontSize: 20 }}>
           route
         </span>
-        <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
           La Mecánica
         </span>
       </div>

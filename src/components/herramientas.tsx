@@ -78,7 +78,7 @@ export function Herramientas() {
         <span className="material-symbols-outlined text-primary" style={{ fontSize: 20 }}>
           smart_toy
         </span>
-        <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
           Plataformas de IA
         </span>
       </div>
