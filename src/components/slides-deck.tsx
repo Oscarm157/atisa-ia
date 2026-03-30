@@ -119,56 +119,57 @@ export function SlidesDeck({ children }: SlidesDeckProps) {
         </div>
       ))}
 
-      {/* Bottom controls */}
-      <div className="absolute bottom-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4">
-        {/* Progress bar */}
-        <div className="flex-1 max-w-xs">
-          <div className="h-0.5 bg-card-border rounded-full overflow-hidden">
-            <div
-              className="h-full bg-primary transition-all duration-500 ease-out rounded-full"
-              style={{ width: `${((current + 1) / total) * 100}%` }}
-            />
-          </div>
-        </div>
-
+      {/* Top-right controls */}
+      <div className="absolute top-0 right-0 z-50 flex items-center gap-3 px-6 py-4">
         {/* Counter */}
-        <div className="flex items-center gap-4">
-          <span className="text-xs font-mono text-muted tabular-nums">
-            {String(current + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
-          </span>
+        <span className="text-xs font-mono text-muted tabular-nums">
+          {String(current + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+        </span>
 
-          {/* Nav arrows */}
-          <div className="flex items-center gap-1">
-            <button
-              onClick={prev}
-              disabled={current === 0}
-              className="w-8 h-8 rounded-lg flex items-center justify-center text-muted hover:text-foreground hover:bg-card disabled:opacity-20 disabled:cursor-not-allowed transition-all"
-            >
-              <span className="material-symbols-outlined" style={{ fontSize: 18 }}>
-                chevron_left
-              </span>
-            </button>
-            <button
-              onClick={next}
-              disabled={current === total - 1}
-              className="w-8 h-8 rounded-lg flex items-center justify-center text-muted hover:text-foreground hover:bg-card disabled:opacity-20 disabled:cursor-not-allowed transition-all"
-            >
-              <span className="material-symbols-outlined" style={{ fontSize: 18 }}>
-                chevron_right
-              </span>
-            </button>
-          </div>
-
-          {/* Fullscreen toggle */}
+        {/* Nav arrows */}
+        <div className="flex items-center gap-1">
           <button
-            onClick={toggleFullscreen}
-            className="w-8 h-8 rounded-lg flex items-center justify-center text-muted hover:text-foreground hover:bg-card transition-all"
-            title="Fullscreen (F)"
+            onClick={prev}
+            disabled={current === 0}
+            className="w-8 h-8 rounded-lg flex items-center justify-center text-muted hover:text-foreground hover:bg-card disabled:opacity-20 disabled:cursor-not-allowed transition-all"
           >
             <span className="material-symbols-outlined" style={{ fontSize: 18 }}>
-              {isFullscreen ? "fullscreen_exit" : "fullscreen"}
+              chevron_left
             </span>
           </button>
+          <button
+            onClick={next}
+            disabled={current === total - 1}
+            className="w-8 h-8 rounded-lg flex items-center justify-center text-muted hover:text-foreground hover:bg-card disabled:opacity-20 disabled:cursor-not-allowed transition-all"
+          >
+            <span className="material-symbols-outlined" style={{ fontSize: 18 }}>
+              chevron_right
+            </span>
+          </button>
+        </div>
+
+        {/* Fullscreen toggle */}
+        <button
+          onClick={toggleFullscreen}
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-muted hover:text-foreground hover:bg-card transition-all"
+          title="Fullscreen (F)"
+        >
+          <span className="material-symbols-outlined" style={{ fontSize: 16 }}>
+            {isFullscreen ? "fullscreen_exit" : "fullscreen"}
+          </span>
+          <span className="text-xs font-medium">
+            {isFullscreen ? "Salir" : "Fullscreen"}
+          </span>
+        </button>
+      </div>
+
+      {/* Bottom progress bar */}
+      <div className="absolute bottom-0 left-0 right-0 z-50 px-6 py-3">
+        <div className="h-0.5 bg-card-border rounded-full overflow-hidden">
+          <div
+            className="h-full bg-primary transition-all duration-500 ease-out rounded-full"
+            style={{ width: `${((current + 1) / total) * 100}%` }}
+          />
         </div>
       </div>
     </div>
