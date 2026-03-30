@@ -6,19 +6,22 @@ import {
   Radar,
   PolarGrid,
   PolarAngleAxis,
+  PolarRadiusAxis,
   ResponsiveContainer,
+  Tooltip,
 } from "recharts";
 
 const criteria = [
-  { name: "Impacto\nMedible", weight: 40, icon: "speed", description: "Ahorro en tiempo, calidad o costo cuantificable" },
-  { name: "Implement.\nViable", weight: 25, icon: "build", description: "Aplicable en el día a día del área" },
-  { name: "Innovación", weight: 20, icon: "auto_awesome", description: "Creatividad en el uso de IA" },
-  { name: "Escalabilidad", weight: 15, icon: "share", description: "Replicable en otras áreas" },
+  { name: "Impacto\nMedible", weight: 40, icon: "speed", description: "Ahorro demostrable en tiempo, calidad o costo. El proyecto debe presentar métricas concretas de antes y después." },
+  { name: "Aplicabilidad", weight: 25, icon: "build", description: "Qué tan fácil es integrarlo en el día a día del área sin depender de infraestructura adicional o conocimiento técnico avanzado." },
+  { name: "Innovación", weight: 20, icon: "auto_awesome", description: "Creatividad en el uso de IA. Se valora explorar capacidades nuevas, no solo automatizar lo obvio." },
+  { name: "Escalabilidad", weight: 15, icon: "share", description: "Potencial para replicarse en otros departamentos o procesos similares dentro de Atisa." },
 ];
 
 const radarData = criteria.map((c) => ({
   subject: c.name.replace("\n", " "),
   value: c.weight,
+  label: `${c.weight}%`,
 }));
 
 export function EvaluacionChart() {
@@ -40,12 +43,41 @@ export function EvaluacionChart() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Radar chart */}
         <div className="rounded-2xl border border-card-border bg-card p-6 flex items-center justify-center">
-          <ResponsiveContainer width="100%" height={260}>
-            <RadarChart data={radarData} cx="50%" cy="50%" outerRadius="75%">
-              <PolarGrid stroke="#333" />
+          <ResponsiveContainer width="100%" height={280}>
+            <RadarChart data={radarData} cx="50%" cy="50%" outerRadius="70%">
+              <PolarGrid stroke="#333" gridType="polygon" />
               <PolarAngleAxis
                 dataKey="subject"
-                tick={{ fill: "#aaa", fontSize: 11 }}
+                tick={(props: Record<string, unknown>) => {
+                  const { x, y, payload } = props as { x: number; y: number; payload: { value: string } };
+                  const item = radarData.find((d) => d.subject === payload.value);
+                  return (
+                    <g transform={`translate(${x},${y})`}>
+                      <text
+                        textAnchor="middle"
+                        fill="#aaa"
+                        fontSize={11}
+                        dy={-4}
+                      >
+                        {payload.value}
+                      </text>
+                      <text
+                        textAnchor="middle"
+                        fill="#CC0000"
+                        fontSize={12}
+                        fontWeight={700}
+                        dy={12}
+                      >
+                        {item?.label}
+                      </text>
+                    </g>
+                  );
+                }}
+              />
+              <PolarRadiusAxis
+                domain={[0, 50]}
+                tick={false}
+                axisLine={false}
               />
               <Radar
                 dataKey="value"
@@ -53,6 +85,15 @@ export function EvaluacionChart() {
                 fill="#CC0000"
                 fillOpacity={0.2}
                 strokeWidth={2}
+              />
+              <Tooltip
+                contentStyle={{
+                  background: "#141414",
+                  border: "1px solid #333",
+                  borderRadius: 8,
+                  fontSize: 12,
+                }}
+                formatter={(value: unknown) => [`${value}%`, "Peso"]}
               />
             </RadarChart>
           </ResponsiveContainer>

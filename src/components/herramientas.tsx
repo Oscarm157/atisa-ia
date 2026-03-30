@@ -83,12 +83,12 @@ export function Herramientas() {
         </span>
       </div>
 
-      <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-tight mb-8 max-w-4xl">
+      <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-6 max-w-4xl">
         4 plataformas de IA.{" "}
         <span className="text-muted">Cada una con fortalezas distintas.</span>
       </h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 stagger-in">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 stagger-in">
         {tools.map((tool) => (
           <div
             key={tool.name}
@@ -96,44 +96,44 @@ export function Herramientas() {
               tool.highlight
                 ? "border-primary/30 glow-red-subtle"
                 : "border-card-border"
-            } bg-card p-4 flex flex-col`}
+            } bg-card p-5 flex flex-col`}
           >
             {/* Header */}
-            <div className="flex items-center gap-2 mb-2">
-              <div className="w-6 h-6 shrink-0 rounded-full bg-primary/10 flex items-center justify-center">
-                <span className="text-[11px] font-bold text-primary">{tool.number}</span>
+            <div className="flex items-center gap-2 mb-3">
+              <div className="w-7 h-7 shrink-0 rounded-full bg-primary/10 flex items-center justify-center">
+                <span className="text-xs font-bold text-primary">{tool.number}</span>
               </div>
               <span
                 className="material-symbols-outlined text-primary"
-                style={{ fontSize: 18 }}
+                style={{ fontSize: 20 }}
               >
                 {tool.icon}
               </span>
             </div>
-            <p className="font-display font-bold text-sm">{tool.name}</p>
-            <p className="text-[10px] text-muted mb-1">{tool.company}</p>
+            <p className="font-display font-bold text-base mb-0.5">{tool.name}</p>
+            <p className="text-xs text-muted mb-1">{tool.company}</p>
             {tool.highlight ? (
-              <span className="text-[9px] bg-primary/10 text-primary px-2 py-0.5 rounded-full font-medium w-fit mb-2">
+              <span className="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full font-medium w-fit mb-3">
                 Lider empresarial
               </span>
             ) : (
-              <p className="text-[9px] text-muted/70 italic mb-2">{tool.tagline}</p>
+              <p className="text-[10px] text-muted/70 italic mb-3">{tool.tagline}</p>
             )}
 
             {/* Description */}
-            <p className="text-[10px] text-muted leading-relaxed mb-3">
+            <p className="text-xs text-muted leading-relaxed mb-3">
               {tool.description}
             </p>
 
             {/* Strengths */}
             <div className="mt-auto space-y-1.5 border-t border-card-border pt-3">
-              <p className="text-[9px] font-semibold uppercase tracking-wider text-muted/60">
+              <p className="text-[10px] font-semibold uppercase tracking-wider text-muted/60">
                 Fortalezas
               </p>
               {tool.strengths.map((s) => (
                 <div key={s} className="flex items-start gap-1.5">
-                  <span className="text-primary text-[8px] mt-[3px]">&#9679;</span>
-                  <p className="text-[10px] text-muted/80 leading-snug">{s}</p>
+                  <span className="text-primary text-[9px] mt-[3px]">&#9679;</span>
+                  <p className="text-xs text-muted/80 leading-snug">{s}</p>
                 </div>
               ))}
             </div>
