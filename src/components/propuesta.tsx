@@ -38,15 +38,16 @@ export function Propuesta() {
       </h2>
 
       <p className="text-muted text-base leading-relaxed mb-3 max-w-3xl">
-        Un programa de 12 semanas en el que los ~250 colaboradores administrativos
-        de Atisa experimentan con IA para resolver problemas reales de su área.
-        Cada participante propone un proyecto, lo desarrolla con herramientas de IA
-        y documenta sus resultados.
+        Una competencia interna de 12 semanas donde los ~250 colaboradores
+        administrativos de Atisa compiten usando IA para resolver retos reales
+        de su área. Cada participante elige un problema, lo ataca con herramientas
+        de IA y presenta resultados medibles.
       </p>
       <p className="text-muted text-base leading-relaxed mb-8 max-w-3xl">
-        Los mejores proyectos se premian y los que demuestren{" "}
+        Los mejores proyectos se premian, los ganadores se reconocen frente a toda
+        la empresa, y las soluciones con{" "}
         <span className="text-foreground font-medium">impacto medible en tiempo, calidad o costo</span>{" "}
-        se implementan en producción.
+        se implementan en producción. No es un curso, es una competencia real con premios reales.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
