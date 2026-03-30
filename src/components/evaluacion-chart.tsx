@@ -12,9 +12,9 @@ import {
 } from "recharts";
 
 const criteria = [
-  { name: "Impacto en Tiempo,\nCalidad o Costo", weight: 40, icon: "speed", description: "Cada proyecto debe demostrar mejoras medibles con métricas de antes y después. Este criterio tiene el mayor peso." },
+  { name: "Impacto en Tiempo,\nCalidad o Costo", weight: 50, icon: "speed", description: "Cada proyecto debe demostrar mejoras medibles con métricas de antes y después. Este criterio tiene el mayor peso." },
   { name: "Innovación", weight: 30, icon: "auto_awesome", description: "Se evalúa el uso creativo de IA, no solo la automatización básica. Se busca que los colaboradores exploren capacidades nuevas." },
-  { name: "Ejecución y\nEscalabilidad", weight: 30, icon: "build", description: "Calidad de la implementación, documentación y potencial para replicarse en otras áreas de Atisa." },
+  { name: "Ejecución y\nEscalabilidad", weight: 20, icon: "build", description: "Calidad de la implementación, documentación y potencial para replicarse en otras áreas de Atisa." },
 ];
 
 const radarData = criteria.map((c) => ({
