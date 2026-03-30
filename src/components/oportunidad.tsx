@@ -27,7 +27,7 @@ export function Oportunidad() {
             Malcolm Gladwell popularizó la regla de las 10,000 horas: nadie domina
             una habilidad sin práctica deliberada.{" "}
             <span className="text-foreground font-medium">
-              Con IA, los tokens son el equivalente a esas horas de práctica.
+              Con IA, cada token consumido es experiencia acumulada hacia esas 10,000 horas.
             </span>{" "}
             No se puede optimizar un proceso sin usarlo, sin probar, sin equivocarse.
           </p>
