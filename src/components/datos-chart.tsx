@@ -47,14 +47,14 @@ export function DatosChart() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Chart */}
-        <div className="rounded-2xl border border-card-border bg-card p-6">
+        <div className="rounded-2xl border border-card-border bg-card p-6 flex flex-col">
           <h3 className="text-xs font-semibold uppercase tracking-wider text-muted mb-1">
             Adopción de IA en empresas
           </h3>
           <p className="text-xs text-muted/60 mb-4">
             % de empresas con IA en al menos una función (McKinsey State of AI, 2025)
           </p>
-          <ResponsiveContainer width="100%" height={200}>
+          <ResponsiveContainer width="100%" className="flex-1" height={260}>
             <BarChart data={adoptionData} margin={{ top: 20, right: 0, left: 0, bottom: 0 }}>
               <XAxis
                 dataKey="year"
