@@ -14,26 +14,37 @@ export function Oportunidad() {
 
       <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-8 max-w-4xl">
         No existen expertos en IA.{" "}
-        <span className="text-muted">
-          Todos estamos aprendiendo. Todos partimos del mismo lugar.
-        </span>
+        <span className="text-muted">Todos partimos del mismo lugar.</span>
       </h2>
 
-      <div className="max-w-3xl space-y-6 text-muted text-lg leading-relaxed">
-        <p>
-          Fuera de los principales laboratorios de investigacion — OpenAI,
-          Anthropic, Google DeepMind — nadie tiene una ventaja real. Las
-          herramientas llevan menos de 3 anos disponibles al publico. El
-          conocimiento se construye experimentando, no leyendo.
-        </p>
-        <p>
-          Esto significa una cosa:{" "}
-          <span className="text-foreground font-medium">
-            la ventana para adelantarnos esta abierta ahora.
-          </span>{" "}
-          Las empresas que estan integrando IA hoy no lo hacen porque saben
-          mas, sino porque decidieron empezar antes.
-        </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="space-y-4 text-muted text-base leading-relaxed">
+          <p>
+            Fuera de los laboratorios de investigación — OpenAI, Anthropic, Google
+            DeepMind — nadie tiene ventaja real. Las herramientas tienen menos de 3
+            años disponibles al público.
+          </p>
+          <p className="text-foreground font-medium">
+            Las empresas que están integrando IA hoy no saben más. Decidieron empezar antes.
+          </p>
+        </div>
+
+        <div className="rounded-2xl border border-card-border bg-card p-6 glow-red-subtle">
+          <div className="text-primary/20 font-display text-5xl leading-none mb-2">&ldquo;</div>
+          <blockquote className="text-lg font-display leading-relaxed text-foreground mb-4">
+            Every company needs to spend an equivalent dollar amount, or more, on
+            AI tokens to transform their business.
+          </blockquote>
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center">
+              <span className="text-[10px] font-bold text-muted">JH</span>
+            </div>
+            <div>
+              <p className="text-xs font-semibold">Jensen Huang</p>
+              <p className="text-[10px] text-muted">CEO, NVIDIA — Marzo 2026</p>
+            </div>
+          </div>
+        </div>
       </div>
     </Slide>
   );

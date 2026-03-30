@@ -1,13 +1,14 @@
 import { SlidesDeck } from "@/components/slides-deck";
 import { Hero } from "@/components/hero";
 import { Oportunidad } from "@/components/oportunidad";
-import { Quote } from "@/components/quote";
-import { Datos } from "@/components/datos";
-import { Datos2 } from "@/components/datos2";
+import { DatosChart } from "@/components/datos-chart";
+import { Herramientas } from "@/components/herramientas";
 import { Propuesta } from "@/components/propuesta";
 import { Mecanica } from "@/components/mecanica";
-import { Mecanica2 } from "@/components/mecanica2";
+import { EvaluacionChart } from "@/components/evaluacion-chart";
+import { Inversion } from "@/components/inversion";
 import { Premios } from "@/components/premios";
+import { TimelineVisual } from "@/components/timeline-visual";
 import { Cta } from "@/components/cta";
 
 export default function Home() {
@@ -15,13 +16,14 @@ export default function Home() {
     <SlidesDeck>
       <Hero />
       <Oportunidad />
-      <Quote />
-      <Datos />
-      <Datos2 />
+      <DatosChart />
+      <Herramientas />
       <Propuesta />
       <Mecanica />
-      <Mecanica2 />
+      <EvaluacionChart />
+      <Inversion />
       <Premios />
+      <TimelineVisual />
       <Cta />
     </SlidesDeck>
   );

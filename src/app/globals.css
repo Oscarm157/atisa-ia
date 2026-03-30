@@ -32,40 +32,65 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
-/* Scroll reveal */
-.reveal {
-  opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+/* Slide entrance animations */
+.slide-enter {
+  animation: slideEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes slideEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 /* Staggered children */
-.reveal-children > * {
+.stagger-in > * {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: staggerChild 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.stagger-in > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-in > *:nth-child(2) { animation-delay: 0.18s; }
+.stagger-in > *:nth-child(3) { animation-delay: 0.26s; }
+.stagger-in > *:nth-child(4) { animation-delay: 0.34s; }
+.stagger-in > *:nth-child(5) { animation-delay: 0.42s; }
+.stagger-in > *:nth-child(6) { animation-delay: 0.5s; }
+.stagger-in > *:nth-child(7) { animation-delay: 0.58s; }
+.stagger-in > *:nth-child(8) { animation-delay: 0.66s; }
+
+@keyframes staggerChild {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.reveal-children.visible > *:nth-child(1) { transition-delay: 0.1s; }
-.reveal-children.visible > *:nth-child(2) { transition-delay: 0.2s; }
-.reveal-children.visible > *:nth-child(3) { transition-delay: 0.3s; }
-.reveal-children.visible > *:nth-child(4) { transition-delay: 0.4s; }
-.reveal-children.visible > *:nth-child(5) { transition-delay: 0.5s; }
-.reveal-children.visible > *:nth-child(6) { transition-delay: 0.6s; }
-
-.reveal-children.visible > * {
-  opacity: 1;
-  transform: translateY(0);
+/* Counter / number animation */
+.animate-number {
+  animation: countPop 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+  opacity: 0;
+  transform: scale(0.8);
 }
 
-/* Glow effect */
+@keyframes countPop {
+  from { opacity: 0; transform: scale(0.8) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Bar chart grow animation */
+.bar-grow {
+  animation: barGrow 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform-origin: bottom;
+}
+
+@keyframes barGrow {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+/* Glow effects */
 .glow-red {
   box-shadow: 0 0 60px rgba(204, 0, 0, 0.15), 0 0 120px rgba(204, 0, 0, 0.05);
 }
@@ -82,7 +107,7 @@ body {
   background-clip: text;
 }
 
-/* Pulse animation for live dot */
+/* Pulse animation */
 @keyframes pulse-dot {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.5; transform: scale(1.5); }
@@ -92,10 +117,23 @@ body {
   animation: pulse-dot 2s ease-in-out infinite;
 }
 
-/* Counter animation */
-@keyframes count-up {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Shimmer effect */
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
 /* Grid background */
@@ -106,9 +144,14 @@ body {
   background-size: 60px 60px;
 }
 
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
+/* Progress bar animation */
+.progress-animate {
+  animation: progressFill 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+  width: 0%;
+}
+
+@keyframes progressFill {
+  to { width: var(--target-width); }
 }
 
 /* Selection color */
@@ -117,11 +160,29 @@ html {
   color: white;
 }
 
+/* Recharts overrides for dark theme */
+.recharts-cartesian-grid line {
+  stroke: #222 !important;
+}
+
+.recharts-text {
+  fill: #888 !important;
+  font-size: 11px !important;
+}
+
+.recharts-tooltip-wrapper {
+  outline: none !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .reveal,
-  .reveal-children > * {
-    transition: none;
+  .slide-enter,
+  .stagger-in > *,
+  .animate-number,
+  .bar-grow,
+  .progress-animate {
+    animation: none;
     opacity: 1;
     transform: none;
+    width: var(--target-width, auto);
   }
 }

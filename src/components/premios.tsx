@@ -25,10 +25,10 @@ const positions = [
 ];
 
 const benefits = [
-  { icon: "school", text: "Conocimiento practico en IA aplicado a tu area" },
-  { icon: "visibility", text: "Tu proyecto presentado ante la direccion de Atisa" },
-  { icon: "trending_up", text: "Habilidades de IA en tu CV — la skill mas demandada de 2026" },
-  { icon: "handshake", text: "Los mejores proyectos se implementan en produccion" },
+  { icon: "school", text: "Conocimiento práctico en IA aplicado a tu área" },
+  { icon: "visibility", text: "Proyecto presentado ante la dirección de Atisa" },
+  { icon: "trending_up", text: "Habilidades de IA — la competencia más demandada de 2026" },
+  { icon: "handshake", text: "Los mejores proyectos se implementan en producción" },
 ];
 
 export function Premios() {
@@ -43,13 +43,12 @@ export function Premios() {
         </span>
       </div>
 
-      <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-10 max-w-4xl">
+      <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-8 max-w-4xl">
         Top 5 proyectos premiados.{" "}
         <span className="text-muted">Todos los participantes ganan.</span>
       </h2>
 
-      {/* Podium */}
-      <div className="grid grid-cols-3 gap-4 mb-10">
+      <div className="grid grid-cols-3 gap-4 mb-8">
         {positions.map((pos) => (
           <div
             key={pos.place}
@@ -64,7 +63,6 @@ export function Premios() {
         ))}
       </div>
 
-      {/* Benefits for everyone */}
       <div className="rounded-2xl border border-card-border bg-card p-6">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted mb-4">
           Todos los participantes ganan
