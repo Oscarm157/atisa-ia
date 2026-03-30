@@ -77,7 +77,7 @@ export function Premios() {
       </p>
 
       {/* Top 3 principales */}
-      <div className="grid grid-cols-3 gap-4 mb-3">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-3">
         {mainPositions.map((pos) => (
           <div
             key={pos.place}
@@ -94,7 +94,7 @@ export function Premios() {
       </div>
 
       {/* 4to y 5to secundarios */}
-      <div className="grid grid-cols-2 gap-3 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
         {secondaryPositions.map((pos) => (
           <div
             key={pos.place}

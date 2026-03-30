@@ -82,7 +82,7 @@ export function Herramientas() {
         Cada una con fortalezas distintas.
       </p>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 stagger-in">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 stagger-in">
         {tools.map((tool) => (
           <div
             key={tool.name}

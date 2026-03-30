@@ -131,7 +131,7 @@ export function SlidesDeck({ children }: SlidesDeckProps) {
       ))}
 
       {/* Top-right controls */}
-      <div className="absolute top-0 right-0 z-50 flex items-center gap-3 px-6 py-4">
+      <div className="absolute top-0 right-0 z-50 flex items-center gap-2 sm:gap-3 px-3 sm:px-6 py-3 sm:py-4">
         {/* Counter */}
         <span className="text-xs font-mono text-muted tabular-nums">
           {String(current + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
@@ -168,7 +168,7 @@ export function SlidesDeck({ children }: SlidesDeckProps) {
           <span className="material-symbols-outlined" style={{ fontSize: 16 }}>
             {isFullscreen ? "fullscreen_exit" : "fullscreen"}
           </span>
-          <span className="text-xs font-medium">
+          <span className="text-xs font-medium hidden sm:inline">
             {isFullscreen ? "Salir" : "Fullscreen"}
           </span>
         </button>

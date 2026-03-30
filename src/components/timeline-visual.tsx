@@ -81,8 +81,8 @@ export function TimelineVisual() {
       </h2>
 
       {/* Timeline bar - proportional widths */}
-      <div className="rounded-2xl border border-card-border bg-card p-5 mb-5">
-        <div className="flex gap-1">
+      <div className="rounded-2xl border border-card-border bg-card p-3 sm:p-5 mb-5">
+        <div className="flex gap-0.5 sm:gap-1">
           {phases.map((phase) =>
             phase.weekBlocks.map((w) => (
               <div key={w} className="flex-1 flex flex-col items-center gap-1.5">
@@ -98,7 +98,7 @@ export function TimelineVisual() {
       </div>
 
       {/* Phase details - proportional grid */}
-      <div className="grid gap-3 stagger-in" style={{ gridTemplateColumns: "2fr 6fr 2fr 2fr" }}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_6fr_2fr_2fr] gap-3 stagger-in">
         {phases.map((phase) => (
           <div
             key={phase.id}
