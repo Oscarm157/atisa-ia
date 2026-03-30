@@ -4,7 +4,6 @@ import { Oportunidad } from "@/components/oportunidad";
 import { DatosChart } from "@/components/datos-chart";
 import { Herramientas } from "@/components/herramientas";
 import { Propuesta } from "@/components/propuesta";
-import { Mecanica } from "@/components/mecanica";
 import { EvaluacionChart } from "@/components/evaluacion-chart";
 import { Inversion } from "@/components/inversion";
 import { Premios } from "@/components/premios";
@@ -19,7 +18,6 @@ export default function Home() {
       <DatosChart />
       <Herramientas />
       <Propuesta />
-      <Mecanica />
       <EvaluacionChart />
       <Inversion />
       <Premios />

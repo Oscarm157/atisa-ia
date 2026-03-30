@@ -3,8 +3,9 @@ import { Slide } from "./slide";
 const phases = [
   {
     id: 1,
-    label: "Kick-off",
+    label: "Kick-off & Capacitación",
     weeks: "Sem 1-2",
+    description: "Presentación del challenge a toda la empresa. Sesiones introductorias de herramientas de IA y cómo empezar a experimentar.",
     color: "bg-blue-500",
     borderColor: "border-blue-500/30",
     bgColor: "bg-blue-500/5",
@@ -19,6 +20,7 @@ const phases = [
     id: 2,
     label: "Experimentación",
     weeks: "Sem 3-8",
+    description: "Cada colaborador explora cómo aplicar IA en su área. Experimenta, prueba y documenta aprendizajes. Los tokens consumidos reflejan el esfuerzo real.",
     color: "bg-purple-500",
     borderColor: "border-purple-500/30",
     bgColor: "bg-purple-500/5",
@@ -32,8 +34,9 @@ const phases = [
   },
   {
     id: 3,
-    label: "Ronda Dept.",
+    label: "Ronda Departamental",
     weeks: "Sem 9-10",
+    description: "Cada departamento selecciona los 1-2 mejores proyectos mediante evaluación entre pares. Los seleccionados pasan a la final.",
     color: "bg-amber-500",
     borderColor: "border-amber-500/30",
     bgColor: "bg-amber-500/5",
@@ -46,8 +49,9 @@ const phases = [
   },
   {
     id: 4,
-    label: "Final",
+    label: "Final & Premiación",
     weeks: "Sem 11-12",
+    description: "Los proyectos finalistas presentan ante un panel evaluador. Se selecciona el Top 5 y se premian los mejores resultados.",
     color: "bg-primary",
     borderColor: "border-primary/30",
     bgColor: "bg-primary/5",
@@ -65,15 +69,16 @@ export function TimelineVisual() {
     <Slide>
       <div className="flex items-center gap-3 mb-4">
         <span className="material-symbols-outlined text-primary" style={{ fontSize: 20 }}>
-          calendar_month
+          route
         </span>
         <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-          Calendario
+          La Mecánica
         </span>
       </div>
 
       <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-tight mb-6 max-w-4xl">
-        12 semanas de ejecución.
+        4 fases. 12 semanas de ejecución.{" "}
+        <span className="text-muted">Resultados reales.</span>
       </h2>
 
       {/* Timeline bar - proportional widths */}
@@ -101,7 +106,7 @@ export function TimelineVisual() {
             className={`rounded-2xl border ${phase.borderColor} ${phase.bgColor} p-4 flex flex-col`}
           >
             {/* Phase header */}
-            <div className="flex items-center gap-2 mb-3">
+            <div className="flex items-center gap-2 mb-2">
               <span className={`font-display font-bold text-xl ${phase.textColor}`}>
                 0{phase.id}
               </span>
@@ -113,8 +118,13 @@ export function TimelineVisual() {
               </div>
             </div>
 
+            {/* Description */}
+            <p className="text-[10px] text-muted leading-relaxed mb-3">
+              {phase.description}
+            </p>
+
             {/* Milestones */}
-            <div className="space-y-2 border-t border-card-border pt-3">
+            <div className="space-y-2 border-t border-card-border pt-3 mt-auto">
               {phase.milestones.map((m) => (
                 <div key={m.text} className="flex items-start gap-2">
                   <span
