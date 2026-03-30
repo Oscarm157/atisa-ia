@@ -5,8 +5,16 @@ const tools = [
     number: 1,
     name: "Claude",
     company: "Anthropic",
+    tagline: "Lider en el sector empresarial",
     description:
-      "Lider actual en el sector empresarial. Destaca en analisis de documentos extensos, razonamiento complejo y generacion de contenido de alta calidad. Su ventana de contexto de 200K tokens permite procesar documentos completos sin perder informacion.",
+      "El modelo mas avanzado en razonamiento, analisis de documentos extensos y generacion de texto. Ventana de contexto de 200K tokens.",
+    strengths: [
+      "Razonamiento y logica compleja",
+      "Analisis de documentos largos (contratos, reportes, legales)",
+      "Redaccion profesional y resumen ejecutivo",
+      "Codigo y asistencia tecnica avanzada",
+      "Investigacion profunda con fuentes",
+    ],
     icon: "neurology",
     highlight: true,
   },
@@ -14,8 +22,16 @@ const tools = [
     number: 2,
     name: "ChatGPT",
     company: "OpenAI",
+    tagline: "El mas versatil y reconocido",
     description:
-      "La herramienta de IA mas reconocida a nivel global. Ofrece generacion de imagenes con DALL-E, analisis de datos avanzado y un ecosistema amplio de plugins y GPTs personalizados para tareas especificas.",
+      "La plataforma de IA con mayor adopcion global. Ecosistema amplio de plugins, GPTs personalizados y capacidades multimodales.",
+    strengths: [
+      "Generacion de imagenes (DALL-E 3)",
+      "Analisis de datos y graficas automaticas",
+      "Navegacion web en tiempo real",
+      "GPTs personalizados por equipo",
+      "Vision: analisis de fotos y documentos escaneados",
+    ],
     icon: "chat",
     highlight: false,
   },
@@ -23,8 +39,16 @@ const tools = [
     number: 3,
     name: "Gemini",
     company: "Google",
+    tagline: "Nativo en Google Workspace",
     description:
-      "Integrado nativamente con Google Workspace. Permite trabajar con texto, imagenes, audio y video de forma simultanea. Ideal para equipos que ya operan dentro del ecosistema de Google.",
+      "Integrado directamente en Gmail, Docs, Sheets y Drive. Capacidades multimodales que incluyen video y audio.",
+    strengths: [
+      "Integrado en Gmail, Docs, Sheets, Slides",
+      "Procesamiento de video y audio",
+      "Busqueda y sintesis de informacion en Drive",
+      "Ventana de contexto de 1M tokens",
+      "Generacion de imagenes (Imagen 3)",
+    ],
     icon: "auto_awesome",
     highlight: false,
   },
@@ -32,8 +56,16 @@ const tools = [
     number: 4,
     name: "Copilot",
     company: "Microsoft",
+    tagline: "Embebido en Microsoft 365",
     description:
-      "Embebido en Microsoft 365. Automatiza tareas en Excel, Word, PowerPoint y Teams. La opcion natural para organizaciones centradas en el ecosistema Microsoft.",
+      "Vive dentro de Excel, Word, PowerPoint, Outlook y Teams. Automatiza tareas directamente donde ya trabajan los equipos.",
+    strengths: [
+      "Automatizacion en Excel (formulas, analisis, pivots)",
+      "Generacion de presentaciones en PowerPoint",
+      "Resumen de correos y reuniones en Teams",
+      "Redaccion y edicion en Word",
+      "Flujos automatizados con Power Automate",
+    ],
     icon: "code",
     highlight: false,
   },
@@ -52,11 +84,11 @@ export function Herramientas() {
       </div>
 
       <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-tight mb-8 max-w-4xl">
-        Cuatro plataformas de IA.{" "}
+        4 plataformas de IA.{" "}
         <span className="text-muted">Cada una con fortalezas distintas.</span>
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 stagger-in">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 stagger-in">
         {tools.map((tool) => (
           <div
             key={tool.name}
@@ -64,30 +96,46 @@ export function Herramientas() {
               tool.highlight
                 ? "border-primary/30 glow-red-subtle"
                 : "border-card-border"
-            } bg-card p-5 hover:border-primary/30 transition-all`}
+            } bg-card p-4 flex flex-col`}
           >
-            <div className="flex items-start gap-4">
-              <div className="w-8 h-8 shrink-0 rounded-full bg-primary/10 flex items-center justify-center">
-                <span className="text-sm font-bold text-primary">{tool.number}</span>
+            {/* Header */}
+            <div className="flex items-center gap-2 mb-2">
+              <div className="w-6 h-6 shrink-0 rounded-full bg-primary/10 flex items-center justify-center">
+                <span className="text-[11px] font-bold text-primary">{tool.number}</span>
               </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-2">
-                  <span
-                    className="material-symbols-outlined text-primary"
-                    style={{ fontSize: 20 }}
-                  >
-                    {tool.icon}
-                  </span>
-                  <p className="font-display font-bold text-base">{tool.name}</p>
-                  <span className="text-xs text-muted">{tool.company}</span>
-                  {tool.highlight && (
-                    <span className="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full font-medium">
-                      Lider empresarial
-                    </span>
-                  )}
+              <span
+                className="material-symbols-outlined text-primary"
+                style={{ fontSize: 18 }}
+              >
+                {tool.icon}
+              </span>
+            </div>
+            <p className="font-display font-bold text-sm">{tool.name}</p>
+            <p className="text-[10px] text-muted mb-1">{tool.company}</p>
+            {tool.highlight ? (
+              <span className="text-[9px] bg-primary/10 text-primary px-2 py-0.5 rounded-full font-medium w-fit mb-2">
+                Lider empresarial
+              </span>
+            ) : (
+              <p className="text-[9px] text-muted/70 italic mb-2">{tool.tagline}</p>
+            )}
+
+            {/* Description */}
+            <p className="text-[10px] text-muted leading-relaxed mb-3">
+              {tool.description}
+            </p>
+
+            {/* Strengths */}
+            <div className="mt-auto space-y-1.5 border-t border-card-border pt-3">
+              <p className="text-[9px] font-semibold uppercase tracking-wider text-muted/60">
+                Fortalezas
+              </p>
+              {tool.strengths.map((s) => (
+                <div key={s} className="flex items-start gap-1.5">
+                  <span className="text-primary text-[8px] mt-[3px]">&#9679;</span>
+                  <p className="text-[10px] text-muted/80 leading-snug">{s}</p>
                 </div>
-                <p className="text-sm text-muted leading-relaxed">{tool.description}</p>
-              </div>
+              ))}
             </div>
           </div>
         ))}
