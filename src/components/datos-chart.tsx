@@ -20,9 +20,9 @@ const adoptionData = [
 ];
 
 const stats = [
-  { value: "$4.4T", label: "Valor anual que la IA agrega a la economía global", source: "McKinsey, 2024" },
-  { value: "55%", label: "Más rápido completan tareas con AI assistants", source: "GitHub Research, 2024" },
-  { value: "25%", label: "Más rápido y 40% mejor calidad usando IA", source: "Harvard Business School, 2024" },
+  { value: "$4.4T", label: "Valor anual que la IA agrega a la economía global. Equivalente al PIB de Japón, distribuido entre manufactura, servicios financieros y tecnología.", source: "McKinsey, 2024" },
+  { value: "55%", label: "Más rápido completan tareas los desarrolladores que usan AI assistants. El mayor impacto se ve en tareas repetitivas como documentación y debugging.", source: "GitHub Research, 2024" },
+  { value: "25%", label: "Más rápido y 40% mejor calidad en entregables cuando profesionales usan IA como apoyo en tareas de análisis y redacción.", source: "Harvard Business School, 2024" },
 ];
 
 export function DatosChart() {
@@ -37,9 +37,13 @@ export function DatosChart() {
         </span>
       </div>
 
-      <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-tight mb-8 max-w-4xl">
+      <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-tight mb-3 max-w-4xl">
         Adopción global de IA.
       </h2>
+      <p className="text-muted text-base leading-relaxed mb-8 max-w-3xl">
+        La integración de IA en empresas se ha acelerado en los últimos 3 años.
+        Los datos muestran un impacto medible en productividad, calidad y valor económico.
+      </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Chart */}
