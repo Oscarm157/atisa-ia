@@ -68,21 +68,26 @@ export function SlidesDeck({ children }: SlidesDeckProps) {
     return () => window.removeEventListener("keydown", onKey);
   }, [next, prev, goTo, total]);
 
-  // Touch swipe
+  // Touch swipe - horizontal only, ignore vertical scroll
+  const touchStartY = useRef<number | null>(null);
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
 
     const onTouchStart = (e: TouchEvent) => {
       touchStart.current = e.touches[0].clientX;
+      touchStartY.current = e.touches[0].clientY;
     };
     const onTouchEnd = (e: TouchEvent) => {
-      if (touchStart.current === null) return;
-      const diff = touchStart.current - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 60) {
-        diff > 0 ? next() : prev();
+      if (touchStart.current === null || touchStartY.current === null) return;
+      const diffX = touchStart.current - e.changedTouches[0].clientX;
+      const diffY = touchStartY.current - e.changedTouches[0].clientY;
+      // Only trigger slide change if horizontal swipe is dominant
+      if (Math.abs(diffX) > 80 && Math.abs(diffX) > Math.abs(diffY) * 2) {
+        diffX > 0 ? next() : prev();
       }
       touchStart.current = null;
+      touchStartY.current = null;
     };
 
     el.addEventListener("touchstart", onTouchStart, { passive: true });

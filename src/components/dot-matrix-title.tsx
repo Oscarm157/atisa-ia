@@ -25,8 +25,8 @@ export function DotMatrixTitle({
     const ctx = ctxRaw;
 
     const dpr = window.devicePixelRatio || 1;
-    const dotRadius = 1.8 * sizeMultiplier;
-    const dotSpacing = Math.max(3, Math.round(5 * sizeMultiplier));
+    const dotRadius = 2.2;
+    const dotSpacing = 4;
 
     const fontSize = Math.min(window.innerWidth * 0.09 * sizeMultiplier, 120 * sizeMultiplier);
     canvas.style.width = "100%";
@@ -61,7 +61,7 @@ export function DotMatrixTitle({
             x,
             y,
             delay: distFromCenter * 1.5 + Math.random() * 200,
-            targetAlpha: 0.6 + Math.random() * 0.4,
+            targetAlpha: 0.75 + Math.random() * 0.25,
           });
         }
       }
@@ -97,10 +97,10 @@ export function DotMatrixTitle({
           ctx.fillStyle = `rgba(204, 0, 0, ${alpha})`;
           ctx.fill();
 
-          if (alpha > 0.5) {
+          if (alpha > 0.3) {
             ctx.beginPath();
-            ctx.arc(dot.x, dot.y - yOffset, dotRadius * 0.4, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(255, 100, 80, ${(alpha - 0.5) * 1.5})`;
+            ctx.arc(dot.x, dot.y - yOffset, dotRadius * 0.5, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 120, 100, ${alpha * 0.8})`;
             ctx.fill();
           }
         }
