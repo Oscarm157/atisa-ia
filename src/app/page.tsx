@@ -21,11 +21,11 @@ export default function Home() {
       <div className="relative z-10 text-center px-6">
         {/* Logo */}
         <Image
-          src="/66678d21-l-ati-g_104c01404b014000000028.png"
+          src="/ATISA-Group-Color-1.png"
           alt="Atisa Group"
           width={200}
           height={48}
-          className="mx-auto mb-16 brightness-0 invert"
+          className="mx-auto mb-16 "
           priority
         />
 

@@ -41,11 +41,11 @@ export function GovHero() {
       <div className="relative z-10 text-center mt-[8vh] sm:mt-0">
         <div className="mb-4 sm:mb-8 hero-fade-in">
           <Image
-            src="/66678d21-l-ati-g_104c01404b014000000028.png"
+            src="/ATISA-Group-Color-1.png"
             alt="Atisa Group"
             width={180}
             height={40}
-            className="mx-auto mb-6 brightness-0 invert"
+            className="mx-auto mb-6 "
             priority
           />
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-card-border bg-card/50 backdrop-blur-sm">

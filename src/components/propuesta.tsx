@@ -62,11 +62,11 @@ export function Propuesta() {
       {/* Logo + Dot Matrix Title */}
       <div className="mb-6">
         <Image
-          src="/66678d21-l-ati-g_104c01404b014000000028.png"
+          src="/ATISA-Group-Color-1.png"
           alt="Atisa Group"
           width={120}
           height={28}
-          className="mb-4 brightness-0 invert"
+          className="mb-4 "
         />
         <div className="max-w-xl">
           <DotMatrixTitle sizeMultiplier={0.6} cycles={2} align="left" />

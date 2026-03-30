@@ -14,11 +14,11 @@ export function Cta() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-10">
           <Image
-            src="/66678d21-l-ati-g_104c01404b014000000028.png"
+            src="/ATISA-Group-Color-1.png"
             alt="Atisa Group"
             width={140}
             height={32}
-            className="mx-auto mb-6 brightness-0 invert"
+            className="mx-auto mb-6 "
           />
           <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mb-4">
             Resumen ejecutivo
