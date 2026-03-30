@@ -70,9 +70,10 @@ export function Propuesta() {
         ))}
       </div>
 
-      <div className="rounded-xl border border-primary/20 bg-primary/5 px-6 py-4 text-center">
-        <p className="font-display font-semibold text-lg text-foreground">
-          No necesitas ser experto en IA. Necesitas conocer tu proceso y experimentar.
+      <div className="rounded-2xl border border-primary/30 bg-primary/5 px-8 py-6 text-center glow-red-subtle">
+        <p className="font-display font-bold text-xl sm:text-2xl text-foreground leading-snug">
+          Los colaboradores no necesitan ser expertos en IA.{" "}
+          <span className="text-gradient">Necesitan conocer a detalle sus procesos y experimentar su optimización con IA.</span>
         </p>
       </div>
     </Slide>
