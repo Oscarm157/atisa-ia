@@ -30,7 +30,7 @@ export function DotMatrixTitle({
     const dotRadius = 2.2;
     const dotSpacing = 4;
 
-    const fontSize = Math.min(window.innerWidth * 0.09 * sizeMultiplier, 120 * sizeMultiplier);
+    const fontSize = Math.min(window.innerWidth * 0.105 * sizeMultiplier, 138 * sizeMultiplier);
     canvas.style.width = "100%";
     canvas.style.height = `${fontSize * 1.3}px`;
     const w = canvas.offsetWidth;

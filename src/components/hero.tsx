@@ -6,7 +6,7 @@ import { DotMatrixTitle } from "./dot-matrix-title";
 
 export function Hero() {
   return (
-    <Slide className="grid-bg overflow-hidden">
+    <Slide className="grid-bg overflow-hidden !items-center">
       {/* Large ambient glow - center */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[160px] pointer-events-none" />
 
@@ -62,9 +62,9 @@ export function Hero() {
             className="mx-auto mb-6 brightness-0 invert"
             priority
           />
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-card-border bg-card/50 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-card-border bg-card/50 backdrop-blur-sm">
             <span className="w-2 h-2 rounded-full bg-primary pulse-dot" />
-            <span className="text-xs font-medium text-muted uppercase tracking-wider">
+            <span className="text-[10px] sm:text-xs font-medium text-muted uppercase tracking-wider">
               Campaña Adopción de AI en Atisa, 2026
             </span>
           </div>
@@ -75,7 +75,7 @@ export function Hero() {
           <DotMatrixTitle />
         </div>
 
-        <p className="max-w-2xl mx-auto text-lg sm:text-xl text-muted leading-relaxed hero-fade-in-delayed">
+        <p className="max-w-2xl mx-auto text-sm sm:text-lg md:text-xl text-muted leading-relaxed hero-fade-in-delayed">
           Competencia gamificada donde cada colaborador de Atisa usa IA para
           resolver retos reales de su área. Experimenta, compite y gana.
         </p>
