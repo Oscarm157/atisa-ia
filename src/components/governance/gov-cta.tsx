@@ -50,12 +50,22 @@ export function GovCta() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-4">
               Aprobación requerida
             </p>
-            <p className="font-display font-bold text-lg sm:text-xl text-foreground leading-snug mb-4">
-              Aprobar Fase 1 inmediata y dejar autorizada la Fase 2 de 8 semanas para evolucionar hacia un AI Governance Dashboard formal.
-            </p>
-            <p className="text-sm text-muted leading-relaxed">
-              Ruta propuesta: adopción rápida primero, gobierno y medición profunda después.
-            </p>
+            <div className="space-y-4 mb-5">
+              <p className="font-display font-bold text-lg sm:text-xl text-foreground leading-snug">
+                Aprobar <span className="text-gradient">Fase 1</span> inmediata.
+              </p>
+              <p className="font-display font-bold text-lg sm:text-xl text-foreground leading-snug">
+                Dejar autorizada la <span className="text-gradient">Fase 2</span> de 8 semanas.
+              </p>
+              <p className="text-sm text-muted leading-relaxed">
+                Para evolucionar hacia un AI Governance Dashboard formal.
+              </p>
+            </div>
+            <div className="border-t border-primary/20 pt-4">
+              <p className="text-xs text-muted leading-relaxed">
+                Ruta propuesta: adopción rápida primero, gobierno y medición profunda después.
+              </p>
+            </div>
           </div>
         </div>
 
